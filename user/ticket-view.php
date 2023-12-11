@@ -24,21 +24,25 @@
           $asunto_ticket= MysqlQuery::RequestPost('asunto_ticket');        
           $mensaje_ticket=  MysqlQuery::RequestPost('mensaje_ticket');
           $estado_ticket="Pendiente";
-          $cabecera="to: ".$_SESSION['email'] . "\r\n";
+          $cabecera="to: ".$_SESSION['email']."\r\n";
           $cabecera.="X-Mailer: PHP/". phpversion();
-          $mensaje_mail="¡Gracias por reportarnos su problema! Buscaremos una solución para su producto lo mas pronto posible. Su ID ticket es: ".$id_ticket;
+          $mensaje_mail="¡Gracias por reportarnos su problema! Buscaremos una solución para su producto lo mas pronto posible. Su ID ticket es: ".$id_ticket."\r\n";
+          $mensaje_mail.="Detalle del problema : ".$mensaje_ticket."\r\n";
+          $mensaje_mail.="Estatus : ".$estado_ticket."\r\n";
           $mensaje_mail=wordwrap($mensaje_mail, 70, "\r\n");
 
-          if(MysqlQuery::Guardar("ticket", "fecha, nombre_usuario, email_cliente, departamento, asunto, mensaje, estado_ticket, serie", "'$fecha_ticket', '$nombre_ticket', '$email_ticket', '$departamento_ticket', '$asunto_ticket', '$mensaje_ticket', '$estado_ticket','$id_ticket'")){
-            /*----------  Enviar correo con los datos del ticket*/
-              $correo = mail($email_ticket, $asunto_ticket, $mensaje_mail, $cabecera);
+            $correo = mail($email_ticket, $asunto_ticket, $mensaje_mail, $cabecera);
 
-              if($correo){
-                  echo 'correo enviado con exito';
-              }else{
-                  echo 'correo no enviado '. "\n";
-              }
-            
+            if($correo){
+                echo 'correo enviado con exito';
+            }else{
+                echo 'correo no enviado '. "\n";
+            }
+
+
+            if(MysqlQuery::Guardar("ticket", "fecha, nombre_usuario, email_cliente, departamento, asunto, mensaje, estado_ticket, serie", "'$fecha_ticket', '$nombre_ticket', '$email_ticket', '$departamento_ticket', '$asunto_ticket', '$mensaje_ticket', '$estado_ticket','$id_ticket'")){
+            /*----------  Enviar correo con los datos del ticket*/
+
             echo '
                 <div class="alert alert-info alert-dismissible fade in col-sm-3 animated bounceInDown" role="alert" style="position:fixed; top:70px; right:10px; z-index:10;"> 
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
