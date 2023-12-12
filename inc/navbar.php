@@ -58,7 +58,7 @@ if (isset($_POST['correo_login']) && isset($_POST['contrasena_login'])) {
                                 </li>
                             <?php endif; ?>
                             <li class="divider"></li>
-                            <li><a href="./process/logout.php"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Cerrar sesión</a>
+                            <li><a href="./process/logout.php" style="color: #d2322d"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Cerrar sesión</a>
                             </li>
                         </ul>
                     </li>

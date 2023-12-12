@@ -24,7 +24,7 @@
           <div class="input-group">
             <input type="email" class="form-control">
             <span class="input-group-btn">
-              <button class="btn btn-default" type="submit">Suscribir</button>
+              <button class="btn btn-success" type="submit">Suscribir</button>
             </span>
           </div>
         </form>

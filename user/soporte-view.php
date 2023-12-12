@@ -11,20 +11,20 @@
 
   <div class="row">
     <div class="col-sm-6">
-      <div class="panel panel-info">
+      <div class="panel panel-success">
         <div class="panel-heading text-center"><i class="fa fa-file-text"></i>&nbsp;<strong>Nuevo Ticket</strong></div>
         <div class="panel-body text-center">
           <img src="./img/new_ticket.png" alt="">
           <h4>Abrir un nuevo ticket</h4>
           <p class="text-justify">Si tienes un problema con cualquiera de tus equipos reportalo creando un nuevo ticket y te ayudaremos a solucionarlo.Si desea actualizar una peticion ya realizada utiliza el formulario de la derecha <em>Comprobar estado de Ticket</em>, solamente los <strong>usuarios registrados</strong> pueden abrir un nuevo ticket.</p>
           <p>Para abrir un nuevo <strong>ticket</strong> has click en el siguiente boton</p>
-          <a type="button" class="btn btn-info" href="./index.php?view=ticket">Nuevo Ticket</a>
+          <a type="button" class="btn btn-success" href="./index.php?view=ticket">Nuevo Ticket</a>
         </div>
       </div>
     </div><!--fin col-md-6-->
     
     <div class="col-sm-6">
-      <div class="panel panel-danger">
+      <div class="panel panel-warning">
         <div class="panel-heading text-center"><i class="fa fa-link"></i>&nbsp;<strong>Comprobar estado de Ticket</strong></div>
         <div class="panel-body text-center">
           <img src="./img/old_ticket.png" alt="">
@@ -34,7 +34,7 @@
             <div class="form-group">
               <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
               <div class="col-sm-10">
-                  <input type="email" class="form-control" name="email_consul" placeholder="Email" required="">
+                  <input type="email" class="form-control" name="email_consul" placeholder="Email" required="" value="<?php echo $_SESSION['email'] ?>">
               </div>
             </div>
             <div class="form-group">
@@ -45,7 +45,7 @@
             </div>
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-success">Colsultar</button>
+                <button type="submit" class="btn btn-warning">Colsultar</button>
               </div>
             </div>
           </form>
