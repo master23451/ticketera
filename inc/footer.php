@@ -1,16 +1,16 @@
-<footer>
+<footer style="background-color: #026034;">
   <div class="container">
     <div class="row">
       <div class="col-sm-4">
-        <h4 class="text-info">Siguenos</h4>
-        <a href="#" class="text-warning"><i class="fa fa-facebook" aria-hidden="true"></i> &nbsp; Facebook</a><br>
-        <a href="#" class="text-warning"><i class="fa fa-twitter" aria-hidden="true"></i> &nbsp; Twitter</a><br>
-        <a href="#" class="text-warning"><i class="fa fa-youtube-play" aria-hidden="true"></i> &nbsp; YouTube</a><br>
-        <a href="#" class="text-warning"><i class="fa fa-instagram" aria-hidden="true"></i> &nbsp; Instagram</a>
+        <h4 style="color: #000000"><strong>Siguenos</strong></h4>
+        <a href="#" style="color: white"><i class="fa fa-facebook" aria-hidden="true"></i> &nbsp; Facebook</a><br>
+        <a href="#" style="color: white"><i class="fa fa-twitter" aria-hidden="true"></i> &nbsp; Twitter</a><br>
+        <a href="#" style="color: white"><i class="fa fa-youtube-play" aria-hidden="true"></i> &nbsp; YouTube</a><br>
+        <a href="#" style="color: white"><i class="fa fa-instagram" aria-hidden="true"></i> &nbsp; Instagram</a>
       </div>
       <div class="col-sm-4">
-        <h4 class="text-info">Dirección</h4>
-        <p class="text-warning"> 
+        <h4 style="color: #000000"><strong>Dirección</strong></h4>
+        <p style="color: white">
         Luis J. Jiménez 577, Colonia Primero de Mayo<br>
         Ciudad: Guadalajara<br>
         Telefono: (52) 33 3030 0900 <br>
@@ -18,13 +18,13 @@
         </p>
       </div>
       <div class="col-sm-4">
-        <h4 class="text-info">Suscribete</h4>
-        <p class="text-warning">Suscribete para recibir ofertas y noticias de nuestros boletines de seguridad</p>
+        <h4 style="color: #000000"><strong>Suscribete</strong></h4>
+        <p style="color: white">Suscribete para recibir ofertas y noticias de nuestros boletines de seguridad</p>
         <form action="" method="POST">
           <div class="input-group">
             <input type="email" class="form-control">
             <span class="input-group-btn">
-              <button class="btn btn-danger" type="submit">Suscribir</button>
+              <button class="btn btn-default" type="submit">Suscribir</button>
             </span>
           </div>
         </form>
