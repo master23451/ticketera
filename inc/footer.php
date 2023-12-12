@@ -30,6 +30,6 @@
         </form>
       </div>
     </div>
-    <h4 class="text-center" style="color: #FFF;">Universidad Tecnológica de Jalisco CopyRight © 1999-2023</h4>
+    <h6 class="text-center" style="color: #FFF;">Universidad Tecnológica de Jalisco CopyRight © 1999-2023</h6>
   </div>
 </footer>

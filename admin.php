@@ -25,7 +25,7 @@ if($_SESSION['tipo']!="admin"){
               <div class="page-header">
                 <h1 class="animated lightSpeedIn">Panel Administrativo</h1>
                 <span class="label label-danger">Universidad Tecnologica de Jalisco</span>
-                <p class="pull-right text-primary">
+                <p class="pull-right text-success">
                   <strong>
                   <?php include "./inc/timezone.php"; ?>
                  </strong>

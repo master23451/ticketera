@@ -20,7 +20,7 @@ header('Content-Type: text/html; charset=UTF-8');
               <div class="page-header">
                 <h1 class="animated lightSpeedIn">Soporte Tecnico <small>U T J</small></h1>
                 <span class="label label-success">Universidad Tecnologica de Jalisco</span>
-                <p class="pull-right text-primary">
+                <p class="pull-right text-success">
                   <strong>
                   <?php include "./inc/timezone.php"; ?>
                  </strong>

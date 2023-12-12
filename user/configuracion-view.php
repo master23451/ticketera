@@ -83,7 +83,7 @@
                     <form action="" method="post" role="form">
                     <div class="form-group">
                       <label class="text-primary"><i class="fa fa-male"></i>&nbsp;&nbsp;Nombre completo</label>
-                      <input type="text" class="form-control" placeholder="Nombre completo" name="name_complete_update" required="" pattern="[a-zA-Z ]{1,40}" title="Nombre Apellido" maxlength="40">
+                      <input type="text" class="form-control" placeholder="Nombre completo" name="name_complete_update" required="" pattern="[a-zA-Z ]{1,40}" title="Nombre Apellido" maxlength="40" value="<?php echo $_SESSION['nombre_completo'] ?>">
                     </div>
                     <div class="form-group">
                       <label class="text-danger"><i class="fa fa-user"></i>&nbsp;&nbsp;Nombre de usuario actual</label>
@@ -104,7 +104,7 @@
                     </div>
                     <div class="form-group">
                       <label class="text-primary"><i class="fa fa-envelope-o"></i>&nbsp;&nbsp;Email</label>
-                      <input type="email" class="form-control"  placeholder="Escriba su email" name="email_update" required="">
+                      <input type="email" class="form-control"  placeholder="Escriba su email" name="email_update" required="" value="<?php echo $_SESSION['email'] ?>">
                     </div>
                     <button type="submit" class="btn btn-info">Actualizar datos</button>
                   </form>
