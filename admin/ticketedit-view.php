@@ -20,9 +20,8 @@
                     </p>
                 </div>
             ';
-			if($radio_email=="option2"){
-				mail($email_edit, $asunto_edit, $mensaje_mail, $cabecera);
-			}
+				//mail($email_edit, $asunto_edit, $mensaje_mail, $cabecera);
+
 
 		}else{
 			echo '
@@ -150,26 +149,6 @@
                             <textarea class="form-control" rows="3"  name="solucion_ticket" required=""><?php echo $reg['solucion']?></textarea>
                           </div>
                         </div>
-                    
-                        <div class="row">
-                            <div class="col-sm-offset-5">
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsRadios" value="option1" checked>
-                                        No enviar solución al email del usuario
-                                    </label>
-                                 </div>
-
-
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" name="optionsRadios" value="option2">
-                                         Enviar solución al email del usuario
-                                    </label>
-                                 </div>
-                            </div>
-                        </div>
-                    
                     <br>
                     
                         <div class="form-group">
