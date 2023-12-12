@@ -1,4 +1,7 @@
-<footer style="background-color: #026034;">
+<footer style="background-color: #026034;  position:fixed;
+   left:0px;
+   bottom:0px;
+   width:100%;">
   <div class="container">
     <div class="row">
       <div class="col-sm-4">
