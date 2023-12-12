@@ -8,7 +8,6 @@ header('Content-Type: text/html; charset=UTF-8');
 <html>
     <head>
         <title>Soporte y Redes U T J</title>
-        <link rel="icon" href="img/logo_utj.jpg">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?php include "./inc/links.php"; ?>        
     </head>
