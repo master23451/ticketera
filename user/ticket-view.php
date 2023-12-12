@@ -103,7 +103,7 @@
                                             <div class='col-sm-10'>
                                                 <div class="input-group">
                                                     <input class="form-control" type="text" id="fechainput"
-                                                           placeholder="Fecha" name="fecha_ticket" required="" readonly>
+                                                           placeholder="Fecha" name="fecha_ticket" required="" readonly value="<?php echo date("m/d/y"); ?>">
                                                     <span class="input-group-addon"><i
                                                                 class="fa fa-calendar"></i></span>
                                                 </div>
@@ -192,7 +192,6 @@
             </div>
         </div>
     </div>
-
     <?php
 } else {
     ?>
