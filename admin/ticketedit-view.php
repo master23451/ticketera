@@ -21,7 +21,8 @@
                 </div>
             ';
 				//mail($email_edit, $asunto_edit, $mensaje_mail, $cabecera);
-
+            $actualizar_correo = new Config_Correo();
+            $actualizar_correo->responder_correo();
 
 		}else{
 			echo '

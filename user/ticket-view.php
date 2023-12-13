@@ -33,6 +33,7 @@
             //$correo = mail($email_ticket, $asunto_ticket, $mensaje_mail, $cabecera);
             $crear_correo = new Config_Correo();
             $crear_correo->crear_correo($email_ticket, $id_ticket, $asunto_ticket, $mensaje_mail, $estado_ticket);
+
             echo '
                 <div class="alert alert-info alert-dismissible fade in col-sm-3 animated bounceInDown" role="alert" style="position:fixed; top:70px; right:10px; z-index:10;"> 
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
