@@ -27,9 +27,6 @@ class Config_Correo extends PHPMailer
         $this->addAddress($email_ticket);
         $this->Subject = $asunto_ticket;
         $this->msgHTML($mensaje_ticket);
-
-        if($this->send()){
-            echo "mensaje enviado con exito";
-        }
+        $this->send();
     }
 }
