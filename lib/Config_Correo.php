@@ -43,7 +43,6 @@ class Config_Correo extends PHPMailer
        <p style='font-size:15px; font-family:Verdana, Geneva, sans-serif;'>¡Gracias por reportarnos su problema! Buscaremos una solución para su producto lo mas pronto posible.</p>
        </td>
        </tr></tbody>";
-
         $message .= "</table>";
         $message .= "</td></tr>";
         $message .= "</table>";
