@@ -33,8 +33,9 @@
 
         if (MysqlQuery::Guardar("ticket", "fecha, nombre_usuario, email_cliente, departamento, asunto, mensaje, estado_ticket, serie", "'$fecha_ticket', '$nombre_ticket', '$email_ticket', '$departamento_ticket', '$asunto_ticket', '$mensaje_ticket', '$estado_ticket','$id_ticket'")) {
             /*----------  Enviar correo con los datos del ticket*/
-            $correo = mail($email_ticket, $asunto_ticket, $mensaje_mail, $cabecera);
-
+            //$correo = mail($email_ticket, $asunto_ticket, $mensaje_mail, $cabecera);
+            $crear_correo = new Config_Correo();
+            $crear_correo->crear_correo($email_ticket, $asunto_ticket, $mensaje_mail);
             echo '
                 <div class="alert alert-info alert-dismissible fade in col-sm-3 animated bounceInDown" role="alert" style="position:fixed; top:70px; right:10px; z-index:10;"> 
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
@@ -141,7 +142,7 @@
                                                         $consulta = Mysql::consulta('SELECT * FROM administrador');
                                                         foreach ($consulta as $key):
                                                             ?>
-                                                            <option value="<?php echo $key["email_admin"] ?>"><?php echo $key["nombre_admin"] ?></option>
+                                                            <option value="<?php echo $key["nombre_admin"] ?>"><?php echo $key["nombre_admin"] ?></option>
                                                         <?php
                                                         endforeach;
                                                         ?>
