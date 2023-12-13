@@ -2,6 +2,7 @@
 session_start();
 include './lib/class_mysql.php';
 include './lib/config.php';
+include './lib/Config_Correo.php';
 header('Content-Type: text/html; charset=UTF-8');
 
 if($_SESSION['tipo']!="admin"){
