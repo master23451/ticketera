@@ -41,6 +41,8 @@
                     <h4 class="text-center">TICKET CREADO</h4>
                     <p class="text-center">
                         Ticket creado con exito ' . $_SESSION['nombre'] . '<br>El TICKET ID es: <strong>' . $id_ticket . '</strong>
+                        <br/>
+                        <strong>Nota: </strong> se envio un correo al solicitante y al tecnico asigando para la tarea.
                     </p>
                 </div>
             ';
