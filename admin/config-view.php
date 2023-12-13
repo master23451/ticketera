@@ -1,4 +1,4 @@
-<?php if($_SESSION['nombre']!="" && $_SESSION['tipo']=="admin"){ 
+<?php if($_SESSION['nombre']!="" && $_SESSION['clave']!="" && $_SESSION['tipo']=="admin"){
 
     /* Guardar nuevo admin */
     if(isset($_POST['nom_admin_reg']) && isset($_POST['admin_reg']) && isset($_POST['admin_clave_reg'])){

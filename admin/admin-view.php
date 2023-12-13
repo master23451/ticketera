@@ -1,4 +1,4 @@
-<?php if($_SESSION['nombre']!="" && $_SESSION['tipo']=="admin"){ ?>    
+<?php if($_SESSION['nombre']!="" && $_SESSION['clave']!="" && $_SESSION['tipo']=="admin"){ ?>
         <?php
             if(isset($_POST['id_del'])){
                 $id_admin=MysqlQuery::RequestPost('id_del');

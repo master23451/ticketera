@@ -1,6 +1,5 @@
 <?php if (isset($_SESSION['nombre']) && isset($_SESSION['tipo'])) {
 
-
     if (isset($_POST['fecha_ticket']) && isset($_POST['name_ticket']) && isset($_POST['email_ticket'])) {
 
         /*Este codigo nos servira para generar un numero diferente para cada ticket*/
