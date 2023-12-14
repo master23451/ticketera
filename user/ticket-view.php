@@ -242,8 +242,8 @@
 <script type="text/javascript">
     function select_cargar() {
         $.ajax({
-            type: "POST",
-            data: "departamento=" + $('#select_departamento').val(),
+            type: 'POST',
+            data: 'departamento=' + $('#select_departamento').val(),
             success: function (r) {
                 $('#select_tecnico').html(r);
             }
