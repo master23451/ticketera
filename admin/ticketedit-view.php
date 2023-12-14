@@ -9,7 +9,6 @@
         $id_edit=MysqlQuery::RequestPost('id_edit');
         $estado_edit=  MysqlQuery::RequestPost('estado_ticket');
         $solucion_edit=  MysqlQuery::RequestPost('solucion_ticket');
-        $radio_email=  MysqlQuery::RequestPost('optionsRadios');
 
         $mensaje_mail="Estimado usuario la solución a su problema es la siguiente : ".$solucion_edit;
         $mensaje_mail=wordwrap($mensaje_mail, 70, "\r\n");
@@ -17,7 +16,7 @@
         if(MysqlQuery::Actualizar("ticket", "estado_ticket='$estado_edit', solucion='$solucion_edit'", "id='$id_edit'")){
 
             echo '
-                <div class="alert alert-info alert-dismissible fade in col-sm-3 animated bounceInDown" role="alert" style="position:fixed; top:70px; right:10px; z-index:10;"> 
+                <div class="alert alert-warning alert-dismissible fade in col-sm-3 animated bounceInDown" role="alert" style="position:fixed; top:70px; right:10px; z-index:10;"> 
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                     <h4 class="text-center">TICKET Actualizado</h4>
                     <p class="text-center">

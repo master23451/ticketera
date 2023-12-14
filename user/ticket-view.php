@@ -1,5 +1,4 @@
 <?php if (isset($_SESSION['nombre']) && isset($_SESSION['tipo'])) {
-
     if (isset($_POST['fecha_ticket']) && isset($_POST['name_ticket']) && isset($_POST['email_ticket'])) {
 
         /*Este codigo nos servira para generar un numero diferente para cada ticket*/
@@ -73,7 +72,7 @@
 
         <div class="row">
             <div class="col-sm-12">
-                <div class="panel panel-info">
+                <div class="panel panel-success">
                     <div class="panel-heading">
                         <h3 class="panel-title text-center"><strong><i class="fa fa-ticket"></i>&nbsp;&nbsp;&nbsp;Ticket</strong>
                         </h3>
@@ -129,15 +128,34 @@
                                                 </div>
                                             </div>
                                         </div>
-
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Departamento</label>
+                                            <div class="col-sm-10">
+                                                <div class='input-group'>
+                                                    <select class="form-control" name="departamento_ticket" id="select_departamento">
+                                                        <option value="No asignado" readonly="">Seleccionar...</option>
+                                                        <?php
+                                                        $consulta = Mysql::consulta('SELECT * FROM departamento');
+                                                        foreach ($consulta as $key):
+                                                            ?>
+                                                            <option value="<?php echo $key["id_departamento"] ?>"><?php echo $key["departamento"] ?></option>
+                                                        <?php
+                                                        endforeach;
+                                                        ?>
+                                                    </select>
+                                                    <span class="input-group-addon"><i class="fa fa-users"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">Tecnico</label>
                                             <div class="col-sm-10">
                                                 <div class='input-group'>
-                                                    <select class="form-control" name="departamento_ticket">
-                                                        <option value="No asignado">Seleccionar...</option>
+                                                    <select class="form-control" name="departamento_ticket" id="select_tecnico">
+                                                        <option value="No asignado" readonly="">Seleccionar...</option>
                                                         <?php
-                                                        $consulta = Mysql::consulta('SELECT * FROM administrador');
+                                                        $id_departamento = $_GET['departamento'];
+                                                        $consulta = Mysql::consulta("SELECT * FROM administrador WHERE departamento= '$id_departamento';");
                                                         foreach ($consulta as $key):
                                                             ?>
                                                             <option value="<?php echo $key["email_admin"] ?>"><?php echo $key["nombre_admin"] ?></option>
@@ -149,7 +167,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">Asunto</label>
                                             <div class="col-sm-10">
@@ -172,9 +189,11 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <div class="col-sm-offset-2 col-sm-10">
-                                                <button type="submit" class="btn btn-info">Abrir ticket</button>
-                                            </div>
+                                            <center>
+                                                <div class="col-sm-offset-2 col-sm-10">
+                                                    <button type="submit" class="btn btn-success">Abrir ticket</button>
+                                                </div>
+                                            </center>
                                         </div>
                                     </fieldset>
                                 </form>
@@ -210,4 +229,25 @@
     $(document).ready(function () {
         $("#fechainput").datepicker();
     });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        select_cargar()
+        $('#select_departamento').change(function () {
+            select_cargar()
+        });
+    });
+</script>
+<script type="text/javascript">
+    function select_cargar() {
+        $.ajax({
+            type: "GET",
+            url: "/",
+            data: "?departamento=" + $('#select_departamento').value(),
+            success: function (r) {
+                $('#select_tecnico').html(r)
+            }
+        });
+
+    }
 </script>
