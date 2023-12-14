@@ -1,12 +1,16 @@
 <?php if( $_SESSION['nombre']!="" && $_SESSION['clave']!="" && $_SESSION['tipo']=="admin"){ ?>
     <?php
+
+    $id = MysqlQuery::RequestGet('id');
+    $sql = Mysql::consulta("SELECT * FROM ticket WHERE id= '$id'");
+    $reg=mysqli_fetch_array($sql, MYSQLI_ASSOC);
+
     if(isset($_POST['id_edit']) && isset($_POST['solucion_ticket']) && isset($_POST['estado_ticket'])){
         $id_edit=MysqlQuery::RequestPost('id_edit');
         $estado_edit=  MysqlQuery::RequestPost('estado_ticket');
         $solucion_edit=  MysqlQuery::RequestPost('solucion_ticket');
         $radio_email=  MysqlQuery::RequestPost('optionsRadios');
 
-        $cabecera="From: Soporte Tecnico UTJ<soporte@utj.edu.mx>";
         $mensaje_mail="Estimado usuario la solución a su problema es la siguiente : ".$solucion_edit;
         $mensaje_mail=wordwrap($mensaje_mail, 70, "\r\n");
 
@@ -23,7 +27,7 @@
             ';
             //mail($email_edit, $asunto_edit, $mensaje_mail, $cabecera);
             $actualizar_correo = new Config_Correo();
-            $actualizar_correo->responder_correo();
+            $actualizar_correo->responder_correo($reg['email_cliente'], $reg['serie'], $reg['asunto'], $reg['mensaje'],  $estado_edit, $solucion_edit);
 
         }else{
             echo '
@@ -38,11 +42,6 @@
         }
     }
 
-
-    $id = MysqlQuery::RequestGet('id');
-    $sql = Mysql::consulta("SELECT * FROM ticket WHERE id= '$id'");
-    $reg=mysqli_fetch_array($sql, MYSQLI_ASSOC);
-
     ?>
 
 
@@ -53,7 +52,7 @@
                 <img src="./img/Edit.png" alt="Image" class="img-responsive animated tada">
             </div>
             <div class="col-sm-9">
-                <a href="./admin.php?view=ticketadmin" class="btn btn-primary btn-sm pull-right"><i class="fa fa-reply"></i>&nbsp;&nbsp;Volver administrar Tickets</a>
+                <a href="./admin.php?view=ticketadmin" class="btn btn-danger btn-sm pull-right"><i class="fa fa-reply"></i>&nbsp;&nbsp;Volver administrar Tickets</a>
             </div>
         </div>
     </div>
@@ -155,7 +154,7 @@
 
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10 text-center">
-                        <button type="submit" class="btn btn-info">Actualizar ticket</button>
+                        <button type="submit" class="btn btn-warning">Actualizar ticket</button>
                     </div>
                 </div>
 

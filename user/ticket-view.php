@@ -31,7 +31,7 @@
             /*----------  Enviar correo con los datos del ticket*/
             //$correo = mail($email_ticket, $asunto_ticket, $mensaje_mail, $cabecera);
             $crear_correo = new Config_Correo();
-            $crear_correo->crear_correo($email_ticket, $id_ticket, $asunto_ticket, $mensaje_mail, $estado_ticket);
+            $crear_correo->crear_correo($email_ticket, $departamento_ticket, $id_ticket, $asunto_ticket, $mensaje_mail, $estado_ticket);
 
             echo '
                 <div class="alert alert-info alert-dismissible fade in col-sm-3 animated bounceInDown" role="alert" style="position:fixed; top:70px; right:10px; z-index:10;"> 
@@ -140,7 +140,7 @@
                                                         $consulta = Mysql::consulta('SELECT * FROM administrador');
                                                         foreach ($consulta as $key):
                                                             ?>
-                                                            <option value="<?php echo $key["nombre_admin"] ?>"><?php echo $key["nombre_admin"] ?></option>
+                                                            <option value="<?php echo $key["email_admin"] ?>"><?php echo $key["nombre_admin"] ?></option>
                                                         <?php
                                                         endforeach;
                                                         ?>
