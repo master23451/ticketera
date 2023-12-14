@@ -133,7 +133,7 @@
                                             <div class="col-sm-10">
                                                 <div class='input-group'>
                                                     <select class="form-control" name="departamento_ticket" id="select_departamento">
-                                                        <option value="No asignado" readonly="">Seleccionar...</option>
+                                                        <option value="0" readonly="">Seleccionar...</option>
                                                         <?php
                                                         $consulta = Mysql::consulta('SELECT * FROM departamento');
                                                         foreach ($consulta as $key):
@@ -152,9 +152,10 @@
                                             <div class="col-sm-10">
                                                 <div class='input-group'>
                                                     <select class="form-control" name="departamento_ticket" id="select_tecnico">
-                                                        <option value="No asignado" readonly="">Seleccionar...</option>
+                                                        <option value="0" readonly="">Seleccionar...</option>
                                                         <?php
-                                                        $id_departamento = $_GET['departamento'];
+                                                        $id_departamento = $_POST['departamento'];
+                                                        echo $id_departamento;
                                                         $consulta = Mysql::consulta("SELECT * FROM administrador WHERE departamento= '$id_departamento';");
                                                         foreach ($consulta as $key):
                                                             ?>
@@ -232,22 +233,20 @@
 </script>
 <script type="text/javascript">
     $(document).ready(function () {
-        select_cargar()
+        select_cargar();
         $('#select_departamento').change(function () {
-            select_cargar()
+            select_cargar();
         });
     });
 </script>
 <script type="text/javascript">
     function select_cargar() {
         $.ajax({
-            type: "GET",
-            url: "/",
-            data: "?departamento=" + $('#select_departamento').value(),
+            type: "POST",
+            data: "departamento=" + $('#select_departamento').val(),
             success: function (r) {
-                $('#select_tecnico').html(r)
+                $('#select_tecnico').html(r);
             }
         });
-
     }
 </script>
