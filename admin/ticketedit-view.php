@@ -67,7 +67,7 @@
                     <label class="col-sm-2 control-label">Fecha</label>
                     <div class='col-sm-10'>
                         <div class="input-group">
-                            <input class="form-control" readonly="" type="text" name="fecha_ticket" readonly="" value="<?php echo $reg['fecha']?>">
+                            <input class="form-control" type="text" name="fecha_ticket" readonly="" value="<?php echo $reg['fecha']?>">
                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                     <label class="col-sm-2 control-label">Serie</label>
                     <div class='col-sm-10'>
                         <div class="input-group">
-                            <input class="form-control" readonly="" type="text" name="serie_ticket" readonly="" value="<?php echo $reg['serie']?>">
+                            <input class="form-control" type="text" name="serie_ticket" readonly="" value="<?php echo $reg['serie']?>">
                             <span class="input-group-addon"><i class="fa fa-barcode"></i></span>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                     <label  class="col-sm-2 control-label">Solicitante</label>
                     <div class="col-sm-10">
                         <div class='input-group'>
-                            <input type="text" readonly="" class="form-control"  name="name_ticket" readonly="" value="<?php echo $reg['nombre_usuario']?>">
+                            <input type="text" class="form-control"  name="name_ticket" readonly="" value="<?php echo $reg['nombre_usuario']?>">
                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
                     <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
                     <div class="col-sm-10">
                         <div class='input-group'>
-                            <input type="email" readonly="" class="form-control"  name="email_ticket" readonly="" value="<?php echo $reg['email_cliente']?>">
+                            <input type="email" class="form-control"  name="email_ticket" readonly="" value="<?php echo $reg['email_cliente']?>">
                             <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                     <label  class="col-sm-2 control-label">Tecnico Asignado</label>
                     <div class="col-sm-10">
                         <div class='input-group'>
-                            <input type="text" readonly="" class="form-control"  name="departamento_ticket" readonly="" value="<?php echo $reg['departamento']?>">
+                            <input type="text" readonly="" class="form-control"  name="departamento_ticket" value="<?php echo $reg['departamento']?>">
                             <span class="input-group-addon"><i class="fa fa-users"></i></span>
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                     <label  class="col-sm-2 control-label">Asunto</label>
                     <div class="col-sm-10">
                         <div class='input-group'>
-                            <input type="text" readonly="" class="form-control"  name="asunto_ticket" readonly="" value="<?php echo $reg['asunto']?>">
+                            <input type="text" class="form-control"  name="asunto_ticket" readonly="" value="<?php echo $reg['asunto']?>">
                             <span class="input-group-addon"><i class="fa fa-paperclip"></i></span>
                         </div>
                     </div>

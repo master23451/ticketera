@@ -7,6 +7,9 @@
 <link rel="stylesheet" href="./css/font-awesome.min.css">
 <link rel="stylesheet" rel="stylesheet" href="./css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
 <link rel="icon" href="img/logo_utj.jpg">
+<meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+<meta http-equiv='pragma' content='no-cache'>
 <script src="./js/jquery-2.1.0.min.js"></script>
 <script src="./js/bootstrap.js"></script>
 <script src="./js/jquery-ui-1.10.4.custom.min.js"></script>

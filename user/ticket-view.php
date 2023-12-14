@@ -64,7 +64,7 @@
                 <img src="img/ticket.png" class="img-responsive" alt="Image">
             </div>
             <div class="col-sm-9 lead">
-                <h2 class="text-info">¿Cómo abrir un nuevo Ticket?</h2>
+                <h2 class="text-success">¿Cómo abrir un nuevo Ticket?</h2>
                 <p>Para abrir un nuevo ticket deberá de llenar todos los campos de el siguiente formulario. Usted podra
                     verificar el estado de su ticket mediante el <strong>Ticket ID</strong> que se le proporcionara a
                     usted cuando llene y nos envie el siguiente formulario.</p>
@@ -109,7 +109,7 @@
                                                     <input type="text" class="form-control" placeholder="Nombre"
                                                            required="" pattern="[a-zA-Z ]{1,30}" name="name_ticket"
                                                            title="Nombre Apellido"
-                                                           value='<?php echo $_SESSION['nombre'] ?>'>
+                                                           value='<?php echo $_SESSION['nombre'] ?>' readonly>
                                                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                                 </div>
                                             </div>
@@ -122,7 +122,8 @@
                                                     <input type="email" class="form-control" id="inputEmail3"
                                                            placeholder="Email" name="email_ticket" required=""
                                                            title="Ejemplo@dominio.com"
-                                                           value='<?php echo $_SESSION['email'] ?>'>
+                                                           value='<?php echo $_SESSION['email'] ?>'
+                                                    readonly>
                                                     <span class="input-group-addon"><i
                                                                 class="fa fa-envelope-o"></i></span>
                                                 </div>
