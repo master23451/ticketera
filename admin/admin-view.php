@@ -37,11 +37,11 @@
         ?>
         <div class="container">
           <div class="row">
-            <div class="col-sm-2">
+            <div class="col-sm-1">
                 <img src="./img/card_identy.png" alt="Image" class="img-responsive animated flipInY">
             </div>
             <div class="col-sm-10">
-              <p class="lead text-info">Bienvenido administrador, en esta página se muestran todos los usuarios y administradores registrados en Soporte UTJ, usted podra eliminarlos si lo desea.</p>
+              <p class="lead">Bienvenido administrador, en esta página se muestran todos los usuarios y administradores registrados en Soporte UTJ, usted podra eliminarlos si lo desea.</p>
             </div>
           </div>
         </div>

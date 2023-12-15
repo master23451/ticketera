@@ -47,10 +47,10 @@
     <!--************************************ Page content******************************-->
     <div class="container">
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-1">
                 <img src="./img/Edit.png" alt="Image" class="img-responsive animated tada">
             </div>
-            <div class="col-sm-9">
+            <div class="col-sm-10">
                 <a href="./admin.php?view=ticketadmin" class="btn btn-danger btn-sm pull-right"><i class="fa fa-reply"></i>&nbsp;&nbsp;Volver administrar Tickets</a>
             </div>
         </div>

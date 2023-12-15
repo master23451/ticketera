@@ -116,11 +116,11 @@
         ?>
         <div class="container">
           <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-1">
               <img src="./img/config.png" alt="Image" class="img-responsive">
             </div>
-            <div class="col-sm-9">
-              <p class="lead text-info">Bienvenido administrador, aqui podra agregar nuevos administradores, actualizar sus datos de cuenta y podra eliminar su cuenta si lo desea.</p>
+            <div class="col-sm-10">
+              <p class="lead">Bienvenido administrador, aqui podra agregar nuevos administradores, actualizar sus datos de cuenta y podra eliminar su cuenta si lo desea.</p>
             </div>
           </div><!--fin row-->
           

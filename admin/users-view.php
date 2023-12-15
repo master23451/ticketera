@@ -37,11 +37,11 @@
         ?>
         <div class="container">
           <div class="row">
-            <div class="col-sm-2">
+            <div class="col-sm-1">
                 <img src="./img/card_identy.png" alt="Image" class="img-responsive animated flipInY">
             </div>
             <div class="col-sm-10">
-              <p class="lead text-info">Bienvenido administrador, en esta página se muestran todos los usuarios y administradores registrados en LinuxStore, usted podra eliminarlos si lo desea.</p>
+              <p class="lead">Bienvenido administrador, en esta página se muestran todos los usuarios y administradores registrados en LinuxStore, usted podra eliminarlos si lo desea.</p>
             </div>
           </div>
         </div>
@@ -52,8 +52,8 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <ul class="nav nav-pills nav-justified">
-                            <li><a href="./admin.php?view=users"><i class="fa fa-users"></i>&nbsp;&nbsp;Usuarios&nbsp;&nbsp;<span class="badge"><?php echo $num_total_user; ?></span></a></li>
-                            <li><a href="./admin.php?view=admin"><i class="fa fa-male"></i>&nbsp;&nbsp;Administradores&nbsp;&nbsp;<span class="badge"><?php echo $num_total_admin; ?></span></a></li>
+                            <li><a href="./admin.php?view=users" class="text-success"><i class="fa fa-users"></i>&nbsp;&nbsp;Usuarios&nbsp;&nbsp;<span class="badge progress-bar-success"><?php echo $num_total_user; ?></span></a></li>
+                            <li><a href="./admin.php?view=admin" class="text-warning"><i class="fa fa-male"></i>&nbsp;&nbsp;Administradores&nbsp;&nbsp;<span class="badge progress-bar-warning"><?php echo $num_total_admin; ?></span></a></li>
                         </ul>
                     </div>
                 </div>
