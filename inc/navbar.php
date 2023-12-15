@@ -18,7 +18,17 @@ if (isset($_POST['correo_login']) && isset($_POST['contrasena_login'])) {
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <?php if (isset($_SESSION['tipo']) && isset($_SESSION['nombre'])): ?>
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <a href="./index.php"><span class="glyphicon glyphicon-home"></span> &nbsp; Inicio</a>
+                    </li>
+                    <?php if($_SESSION['tipo'] == "user"):?>
+                    <li>
+                        <a href="./index.php?view=soporte"><span class="glyphicon glyphicon-flag"></span>&nbsp;&nbsp;Levanta Ticket</a>
+                    </li>
+                    <?php endif; ?>
+                </ul>
+            <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <span class="glyphicon glyphicon-user"></span> &nbsp; <?php echo $_SESSION['nombre']; ?><b
@@ -27,13 +37,9 @@ if (isset($_POST['correo_login']) && isset($_POST['contrasena_login'])) {
                         <ul class="dropdown-menu">
                             <!-- usuarios -->
                             <?php if ($_SESSION['tipo'] == "user"): ?>
-                                <li>
-                                    <a href="./index.php?view=soporte"><span class="glyphicon glyphicon-flag"></span>&nbsp;&nbsp;Levanta Ticket</a>
-                                </li>
-                                <li>
-                                    <a href="#!"><span
-                                                class="glyphicon glyphicon-comment"></span>&nbsp;&nbsp;Mensajes</a>
-                                </li>
+                               <!-- <li>
+                                    <a href="#"><span class="glyphicon glyphicon-comment"></span>&nbsp;&nbsp;Mensajes</a>
+                                </li> -->
                                 <li>
                                     <a href="./index.php?view=configuracion"><i class="fa fa-cogs"></i>&nbsp;&nbsp;Configuracion</a>
                                 </li>
@@ -65,10 +71,6 @@ if (isset($_POST['correo_login']) && isset($_POST['contrasena_login'])) {
                 </ul>
             <?php endif; ?>
             <ul class=" nav navbar-nav navbar-right">
-                <li>
-                    <a href="./index.php"><span class="glyphicon glyphicon-home"></span> &nbsp; Inicio</a>
-                </li>
-
                 <?php if (!isset($_SESSION['tipo']) && !isset($_SESSION['nombre'])): ?>
                     <li>
                         <a href="./index.php?view=registro"><i class="fa fa-users"></i>&nbsp;&nbsp;Registrate</a>
