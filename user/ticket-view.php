@@ -1,4 +1,5 @@
-<?php if (isset($_SESSION['nombre']) && isset($_SESSION['tipo'])) {
+<?php
+if (isset($_SESSION['nombre']) && isset($_SESSION['tipo'])) {
     if (isset($_POST['fecha_ticket']) && isset($_POST['name_ticket']) && isset($_POST['email_ticket'])) {
 
         /*Este codigo nos servira para generar un numero diferente para cada ticket*/
@@ -82,12 +83,12 @@
                             <div class="col-sm-4 text-center">
                                 <br><br><br>
                                 <img src="img/write_email.png" alt=""><br><br>
-                                <p class="text-primary text-justify">Por favor llene todos los datos de este formulario
+                                <p class="text-justify">Por favor llene todos los datos de este formulario
                                     para abrir su ticket. El <strong>Ticket ID</strong> será enviado a la dirección de
                                     correo electronico proporcionada en este formulario.</p>
                             </div>
                             <div class="col-sm-8">
-                                <form class="form-horizontal" role="form" action="" method="POST">
+                                <form class="form-horizontal" role="form" action="" method="POST" id="formulario">
                                     <fieldset>
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">Fecha</label>
@@ -129,34 +130,13 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-sm-2 control-label">Departamento</label>
-                                            <div class="col-sm-10">
-                                                <div class='input-group'>
-                                                    <select class="form-control" name="departamento_ticket" id="select_departamento">
-                                                        <option value="0" readonly="">Seleccionar...</option>
-                                                        <?php
-                                                        $consulta = Mysql::consulta('SELECT * FROM departamento');
-                                                        foreach ($consulta as $key):
-                                                            ?>
-                                                            <option value="<?php echo $key["id_departamento"] ?>"><?php echo $key["departamento"] ?></option>
-                                                        <?php
-                                                        endforeach;
-                                                        ?>
-                                                    </select>
-                                                    <span class="input-group-addon"><i class="fa fa-users"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
                                             <label class="col-sm-2 control-label">Tecnico</label>
                                             <div class="col-sm-10">
                                                 <div class='input-group'>
                                                     <select class="form-control" name="departamento_ticket" id="select_tecnico">
                                                         <option value="0" readonly="">Seleccionar...</option>
                                                         <?php
-                                                        $id_departamento = $_POST['departamento'];
-                                                        echo $id_departamento;
-                                                        $consulta = Mysql::consulta("SELECT * FROM administrador WHERE departamento= '$id_departamento';");
+                                                            $consulta = Mysql::consulta("SELECT * FROM administrador ");
                                                         foreach ($consulta as $key):
                                                             ?>
                                                             <option value="<?php echo $key["email_admin"] ?>"><?php echo $key["nombre_admin"] ?></option>
@@ -188,7 +168,6 @@
                                                           name="mensaje_ticket" required=""></textarea>
                                             </div>
                                         </div>
-
                                         <div class="form-group">
                                             <center>
                                                 <div class="col-sm-offset-2 col-sm-10">
@@ -230,23 +209,4 @@
     $(document).ready(function () {
         $("#fechainput").datepicker();
     });
-</script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        select_cargar();
-        $('#select_departamento').change(function () {
-            select_cargar();
-        });
-    });
-</script>
-<script type="text/javascript">
-    function select_cargar() {
-        $.ajax({
-            type: 'POST',
-            data: 'departamento=' + $('#select_departamento').val(),
-            success: function (r) {
-                $('#select_tecnico').html(r);
-            }
-        });
-    }
 </script>
