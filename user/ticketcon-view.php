@@ -37,7 +37,7 @@ if(mysqli_num_rows($consulta_tablaTicket)>=1){
                 <img src="img/status.png" class="img-responsive" alt="Image">
             </div>
             <div class="col-sm-10 lead text-justify">
-                <h2 class="text-success">Estado de ticket de soporte</h2>
+                <h2 class="text-success"><strong>Estado de ticket de soporte</strong></h2>
                 <p>Si su <strong>ticket</strong> no ha sido solucionado aún, espere pacientemente, estamos trabajando para poder resolver su problema y darle una solución.</p>
             </div>
         </div><!--fin row well-->
