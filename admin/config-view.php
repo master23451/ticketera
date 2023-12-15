@@ -127,7 +127,7 @@
           <br><br>        
           
           <div class="row">
-              <di class="col-sm-8">
+              <div class="col-sm-8">
                   <div class="row">
                       <div class="col-sm-12">
                         <div class="panel panel-success">
@@ -163,7 +163,7 @@
                         <div class="panel panel-danger">
                           <div class="panel-heading text-center"><i class="fa fa-trash-o"></i>&nbsp;<strong>Eliminar cuenta</strong></div>
                           <div class="panel-body">
-                              <center><img class="img-responsive" src="./img/delete_user.png"></center><br>
+                              <center><img class="img-responsive" src="./img/delete_user.png" alt=""></center><br>
                               <center><button class="btn btn-danger btn-sm" data-toggle="modal" data-target=".bs-example-modal-sm">Eliminar cuenta</button></center>
 
                                 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
@@ -197,7 +197,7 @@
                         </div>
                       </div> 
                   </div><!--Fin row 2 eliminar-->
-              </di><!--Fin class col-md-8-->
+              </div><!--Fin class col-md-8-->
               
               <div class="col-sm-4">
                   <div class="row">
