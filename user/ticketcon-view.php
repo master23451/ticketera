@@ -42,7 +42,11 @@ if(mysqli_num_rows($consulta_tablaTicket)>=1){
             </div>
         </div><!--fin row well-->
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col">
+                <a href="./index.php?view=soporte" class="btn btn-warning" style="margin-right: 50%"><i class="fa fa-reply"></i>&nbsp;&nbsp;Volver a soporte</a>
+            </div>
+            <br/>
+            <div class="col">
                 <div class="panel panel-success">
                     <div class="panel-heading text-center"><h4><i class="fa fa-ticket"></i> Ticket &nbsp;#<?php echo $lsT['serie']; ?></h4></div>
                     <div class="panel-body">
