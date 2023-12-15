@@ -31,7 +31,7 @@ class Config_Correo extends PHPMailer
         $mensaje .= "<table width='100%' bgcolor='#e0e0e0' cellpadding='0' cellspacing='0' border='0'>";
         $mensaje .= "<tr><td>";
         $mensaje .= "<table align='center' width='100%' border='0' cellpadding='0' cellspacing='0' style='max-width:650px; background-color:#fff; font-family:Verdana, Geneva, sans-serif;'>";
-        $mensaje .= "<thead><tr height='80'><th colspan='4' style='background-color:#026034; border-bottom:solid 1px #bdbdbd; font-family:Verdana, Geneva, sans-serif; color:#ffffff; font-size:34px;' >Soporte tecnico UTJ</th></tr></thead>";
+        $mensaje .= "<thead><tr height='50'><th colspan='4' style='background-color:#026034; border-bottom:solid 1px #bdbdbd; font-family:Verdana, Geneva, sans-serif; color:#ffffff; font-size:34px;' >Soporte tecnico UTJ</th></tr></thead>";
         $mensaje .= "<tbody>
        <tr>
        <td colspan='4' style='padding:15px;'>
