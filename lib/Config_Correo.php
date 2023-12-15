@@ -89,14 +89,14 @@ class Config_Correo extends PHPMailer
         $mensaje .= "<table width='100%' bgcolor='#e0e0e0' cellpadding='0' cellspacing='0' border='0'>";
         $mensaje .= "<tr><td>";
         $mensaje .= "<table align='center' width='100%' border='0' cellpadding='0' cellspacing='0' style='max-width:650px; background-color:#fff; font-family:Verdana, Geneva, sans-serif;'>";
-        $mensaje .= "<thead><tr height='80'><th colspan='4' style='background-color:#026034; border-bottom:solid 1px #bdbdbd; font-family:Verdana, Geneva, sans-serif; color:#ffffff; font-size:34px;' >Soporte tecnico UTJ</th></tr></thead>";
+        $mensaje .= "<thead><tr height='50'><th colspan='4' style='background-color:#026034; border-bottom:solid 1px #bdbdbd; font-family:Verdana, Geneva, sans-serif; color:#ffffff; font-size:34px;' >Soporte tecnico UTJ</th></tr></thead>";
         $mensaje .= "<tbody>
        <tr>
        <td colspan='4' style='padding:15px;'>
        <p style='font-size:20px;'><strong>ID:  </strong>  ".$id_ticket." - ".$asunto_ticket."</p>
-       <p style='font-size:18px;'><strong>Detalle: </strong> ".$detalle_ticket."</p><br/>
-       <p style='font-size:16px;'><strong>Solución: </strong> ".$ticket_solucion."</p>
-       <p style='font-size:14px; color: $color'><strong>Estatus:</strong> ".$estatus. "</p>
+       <p style='font-size:18px;'><strong>Detalle: </strong><br/>".$detalle_ticket."</p><br/>
+       <p style='font-size:16px;'><strong>Solución: </strong><br/> ".$ticket_solucion."</p>
+       <p style='font-size:14px; color: $color'><strong>Estatus:</strong><br/> ".$estatus. "</p>
        <hr/>
        <img src='/Logo-UTJ-Verde.png' alt='logo UTJ' style='height:auto; width:100%; max-width:100%;' />
        <p style='font-size:15px; font-family:Verdana, Geneva, sans-serif;'>¡Gracias por reportarnos su problema! Buscaremos una solución para su producto lo mas pronto posible.</p>
