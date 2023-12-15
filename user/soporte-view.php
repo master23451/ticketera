@@ -6,7 +6,7 @@
                 <img src="img/tux_repair.png" class="img-responsive" alt="Image">
             </div>
             <div class="col-sm-9 lead">
-                <h2 class="text-success">Bienvenido al centro de soporte de U T J</h2>
+                <h2 class="text-success"><strong>Bienvenido al centro de soporte de U T J</strong></h2>
                 <p>Es muy facil de usar, si usted tiene problemas con alguno de sus equipos nos puede enviar un nuevo ticket, nosotros lo respondemos y solucionaremos su problema.<br>Si ya nos ha enviado un ticket puede consultar el estado de este mediante su <strong>Ticket ID</strong>.</p>
             </div>
         </div><!--fin row 1-->

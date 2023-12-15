@@ -64,7 +64,7 @@ if (isset($_SESSION['nombre']) && isset($_SESSION['tipo'])) {
                 <img src="img/ticket.png" class="img-responsive" alt="Image">
             </div>
             <div class="col-sm-9 lead">
-                <h2 class="text-success">¿Cómo abrir un nuevo Ticket?</h2>
+                <h2 class="text-success"><strong>¿Cómo abrir un nuevo Ticket?</strong></h2>
                 <p>Para abrir un nuevo ticket deberá de llenar todos los campos de el siguiente formulario. Usted podra
                     verificar el estado de su ticket mediante el <strong>Ticket ID</strong> que se le proporcionara a
                     usted cuando llene y nos envie el siguiente formulario.</p>
