@@ -114,17 +114,17 @@
                     if (mysqli_num_rows($selticket) > 0):
                         ?>
                         <table class="table table-hover table-striped table-bordered">
-                            <thead>
+                            <thead style="color: white; background-color: #2b542c;">
                             <tr>
-                                <th class="text-center">#</th>
-                                <th class="text-center">Fecha</th>
-                                <th class="text-center">Serie</th>
-                                <th class="text-center">Estado</th>
-                                <th class="text-center">Nombre</th>
-                                <th class="text-center">Servicio</th>
-                                <th class="text-center">Email</th>
-                                <th class="text-center">Tecnico</th>
-                                <th class="text-center">Opciones</th>
+                                <th class="text-center col">#</th>
+                                <th class="text-center col">Fecha</th>
+                                <th class="text-center col">Serie</th>
+                                <th class="text-center col">Estado</th>
+                                <th class="text-center col">Solicitante</th>
+                                <th class="text-center col">Servicio</th>
+                                <th class="text-center col">Email</th>
+                                <th class="text-center col">Tecnico</th>
+                                <th class="text-center col">Opciones</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -133,7 +133,7 @@
                             while ($row = mysqli_fetch_array($selticket, MYSQLI_ASSOC)):
                                 ?>
                                 <tr>
-                                    <td class="text-center"><?php echo $ct; ?></td>
+                                    <td class="text-center"><strong><?php echo $ct; ?></strong></td>
                                     <td class="text-center"><?php echo $row['fecha']; ?></td>
                                     <td class="text-center"><?php echo $row['serie']; ?></td>
                                     <td class="text-center"><?php echo $row['estado_ticket']; ?></td>
@@ -141,7 +141,7 @@
                                     <td class="text-center"><?php echo $row['mensaje']; ?></td>
                                     <td class="text-center"><?php echo $row['email_cliente']; ?></td>
                                     <td class="text-center"><?php echo $row['departamento']; ?></td>
-                                    <td class="text-center">
+                                    <td class="text-center" style="width: 10%">
 
                                         <a href="admin.php?view=ticketedit&id=<?php echo $row['id']; ?>"
                                            class="btn btn-sm btn-warning"><i class="fa fa-pencil"
