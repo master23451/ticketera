@@ -202,7 +202,7 @@
               <div class="col-sm-4">
                   <div class="row">
                       <div class="col-sm-12">
-                        <div class="panel panel-info">
+                        <div class="panel panel-warning">
                          <div class="panel-heading text-center"><i class="fa fa-refresh"></i>&nbsp;<strong>Actualizar datos de cuenta</strong></div>
                          <div class="panel-body">
                             <?php
@@ -221,7 +221,7 @@
                              </div>
                              <div class="form-group has-success has-feedback">
                                <label class="control-label"><i class="fa fa-user"></i>&nbsp;Nuevo nombre de administrador</label>
-                               <input type="text" id="input_user2" class="form-control" name="admin_up" placeholder="Nombre de administrador" required="" pattern="[a-zA-Z0-9]{1,15}" title="Ejemplo7 maximo 15 caracteres" maxlength="15">
+                               <input type="text" id="input_user2" class="form-control" name="admin_up" placeholder="Nombre de administrador" required="" pattern="[a-zA-Z0-9]{1,15}" title="Ejemplo7 maximo 15 caracteres" maxlength="20">
                                <div id="com_form2"></div>
                              </div>
                              <div class="form-group">
@@ -235,7 +235,8 @@
                              <div class="form-group">
                                <label><i class="fa fa-envelope"></i>&nbsp;Email</label>
                                <input type="email" class="form-control" value="<?php echo $reg1['email_admin']; ?>" name="admin_email_up"  placeholder="Email administrador" required="">
-                             </div><button type="submit" class="btn btn-info">Actualizar datos</button>
+                             </div>
+                                 <center><button type="submit" class="btn btn-warning">Actualizar datos</button></center>
                            </form>
                          </div>
                        </div>
