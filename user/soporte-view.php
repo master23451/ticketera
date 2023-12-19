@@ -33,10 +33,10 @@
                         <h4>Colsultar estado de ticket</h4>
                         <form class="form-horizontal" role="form" method="GET" action="./index.php">
                             <input type="hidden" name="view" value="ticketcon">
-                            <div class="form-group">
+                            <div class="form-group" hidden="">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
                                 <div class="col-sm-10">
-                                    <input type="email" class="form-control" name="email_consul" placeholder="Email" required="" value="<?php echo $_SESSION['email'] ?>">
+                                    <input type="email" class="form-control" name="email_consul" placeholder="Email" required="" value="<?php echo $_SESSION['email'] ?>" readonly>
                                 </div>
                             </div>
                             <div class="form-group">
