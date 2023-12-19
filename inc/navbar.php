@@ -13,7 +13,7 @@ if (isset($_POST['correo_login']) && isset($_POST['contrasena_login'])) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="./index.php" style="color: white"><img src="logo_utj.jpg" alt="logo" width="30" height="24" class="d-inline-block align-text-top" />&nbsp;&nbsp;<strong>Universidad
+            <a class="navbar-brand" href="./index.php" style="color: white"><img src="logo_utj.jpg" alt="logo" width="30" height="24" class="d-inline-block align-text-top" />&nbsp;&nbsp;<strong>Soporte Tecnico de la Universidad
                     Tecnologica Jalisco</strong></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -37,6 +37,9 @@ if (isset($_POST['correo_login']) && isset($_POST['contrasena_login'])) {
                         <ul class="dropdown-menu">
                             <!-- usuarios -->
                             <?php if ($_SESSION['tipo'] == "user"): ?>
+                                <li>
+                                    <center><span class="label label-success">Cliente</span></center>
+                                </li>
                                <!-- <li>
                                     <a href="#"><span class="glyphicon glyphicon-comment"></span>&nbsp;&nbsp;Mensajes</a>
                                 </li> -->
@@ -47,6 +50,9 @@ if (isset($_POST['correo_login']) && isset($_POST['contrasena_login'])) {
 
                             <!-- admins -->
                             <?php if ($_SESSION['tipo'] == "admin"): ?>
+                                <li>
+                                    <center><span class="label label-warning">Administrador</span></center>
+                                </li>
                                 <li>
                                     <a href="admin.php?view=ticketadmin"><span
                                                 class="glyphicon glyphicon-envelope"></span> &nbsp; Administrar Tickets</a>
