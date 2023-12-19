@@ -60,8 +60,8 @@
               <input type="password" class="form-control" name="clave_reg" placeholder="Contraseña" required="">
             </div>
             <div class="form-group">
-              <label><i class="fa fa-envelope"></i>&nbsp;Email</label>
-              <input type="email" class="form-control"  name="email_reg"  placeholder="Escriba su email" required="">
+              <label><i class="fa fa-envelope"></i>&nbsp;Email Institucional</label>
+              <input type="email" class="form-control"  name="email_reg"  placeholder="Escriba su email" required="" value="@utj.edu.mx">
             </div>
             <button type="submit" class="btn btn-danger">Crear cuenta</button>
           </form>

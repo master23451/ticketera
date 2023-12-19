@@ -40,9 +40,9 @@ if (isset($_POST['correo_login']) && isset($_POST['contrasena_login'])) {
                                 <li>
                                     <center><span class="label label-success">Cliente</span></center>
                                 </li>
-                               <!-- <li>
-                                    <a href="#"><span class="glyphicon glyphicon-comment"></span>&nbsp;&nbsp;Mensajes</a>
-                                </li> -->
+                                <!--<li>
+                                    <a href="#"><span class="glyphicon glyphicon-comment"></span>&nbsp;&nbsp;Tus mensajes</a>
+                                </li>-->
                                 <li>
                                     <a href="./index.php?view=configuracion"><i class="fa fa-cogs"></i>&nbsp;&nbsp;Configuracion</a>
                                 </li>
