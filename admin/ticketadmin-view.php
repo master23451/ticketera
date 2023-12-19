@@ -162,7 +162,7 @@
                             </tbody>
                         </table>
                     <?php else: ?>
-                        <h2 class="text-center">No hay tickets registrados en el sistema</h2>
+                        <h2 class="text-center text-warning">No hay tickets registrados en el sistema</h2>
                     <?php endif; ?>
                 </div>
                 <?php

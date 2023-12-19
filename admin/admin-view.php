@@ -52,8 +52,8 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <ul class="nav nav-pills nav-justified">
-                            <li><a href="./admin.php?view=users"><i class="fa fa-users"></i>&nbsp;&nbsp;Usuarios&nbsp;&nbsp;<span class="badge"><?php echo $num_total_user; ?></span></a></li>
-                            <li><a href="./admin.php?view=admin"><i class="fa fa-male"></i>&nbsp;&nbsp;Administradores&nbsp;&nbsp;<span class="badge"><?php echo $num_total_admin; ?></span></a></li>
+                            <li><a href="./admin.php?view=users" class="text-success"><i class="fa fa-users"></i>&nbsp;&nbsp;Usuarios&nbsp;&nbsp;<span class="badge progress-bar-success"><?php echo $num_total_user; ?></span></a></li>
+                            <li><a href="./admin.php?view=admin" class="text-warning"><i class="fa fa-male"></i>&nbsp;&nbsp;Administradores&nbsp;&nbsp;<span class="badge progress-bar-warning"><?php echo $num_total_admin; ?></span></a></li>
                         </ul>
                     </div>
                 </div>
