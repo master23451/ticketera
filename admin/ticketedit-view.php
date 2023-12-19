@@ -45,18 +45,17 @@
 
 
     <!--************************************ Page content******************************-->
+    <br/>
     <div class="container">
         <div class="row">
             <div class="col-sm-1">
                 <img src="./img/Edit.png" alt="Image" class="img-responsive animated tada">
             </div>
-            <div class="col-sm-10">
-                <a href="./admin.php?view=ticketadmin" class="btn btn-danger btn-sm pull-right"><i class="fa fa-reply"></i>&nbsp;&nbsp;Volver administrar Tickets</a>
+            <div class="col-sm-pull-1">
+                <a href="./admin.php?view=ticketadmin" class="btn btn-warning btn-sm fa-pull-right"><i class="fa fa-reply"></i>&nbsp;&nbsp;Volver administrar Tickets</a>
             </div>
         </div>
     </div>
-
-
     <div class="container">
         <div class="col-sm-12">
             <form class="form-horizontal" role="form" action="" method="POST">
