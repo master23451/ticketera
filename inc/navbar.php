@@ -13,7 +13,7 @@ if (isset($_POST['correo_login']) && isset($_POST['contrasena_login'])) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#" style="color: white"><img src="logo_utj.jpg" alt="logo" width="30" height="24" class="d-inline-block align-text-top" />&nbsp;&nbsp;<strong>Universidad
+            <a class="navbar-brand" href="./index.php" style="color: white"><img src="logo_utj.jpg" alt="logo" width="30" height="24" class="d-inline-block align-text-top" />&nbsp;&nbsp;<strong>Universidad
                     Tecnologica Jalisco</strong></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
