@@ -26,6 +26,18 @@ if (isset($_POST['correo_login']) && isset($_POST['contrasena_login'])) {
                     <li>
                         <a href="./index.php?view=soporte"><span class="glyphicon glyphicon-flag"></span>&nbsp;&nbsp;Levanta Ticket</a>
                     </li>
+                    <?php elseif($_SESSION['tipo'] == "admin"): ?>
+                        <li>
+                            <a href="./index.php?view=soporte"><span class="glyphicon glyphicon-flag"></span>&nbsp;&nbsp;Levanta Ticket</a>
+                        </li>
+                        <li>
+                            <a href="admin.php?view=ticketadmin"><span
+                                        class="glyphicon glyphicon-envelope"></span> &nbsp; Administrar Tickets</a>
+                        </li>
+                        <li>
+                            <a href="admin.php?view=users"><span class="glyphicon glyphicon-user"></span> &nbsp;Administrar
+                                Usuarios</a>
+                        </li>
                     <?php endif; ?>
                 </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -52,14 +64,6 @@ if (isset($_POST['correo_login']) && isset($_POST['contrasena_login'])) {
                             <?php if ($_SESSION['tipo'] == "admin"): ?>
                                 <li>
                                     <center><span class="label label-warning">Administrador</span></center>
-                                </li>
-                                <li>
-                                    <a href="admin.php?view=ticketadmin"><span
-                                                class="glyphicon glyphicon-envelope"></span> &nbsp; Administrar Tickets</a>
-                                </li>
-                                <li>
-                                    <a href="admin.php?view=users"><span class="glyphicon glyphicon-user"></span> &nbsp;Administrar
-                                        Usuarios</a>
                                 </li>
                                 <!--<li>
                                     <a href="admin.php?view=admin"><span class="glyphicon glyphicon-user"></span> &nbsp;Administrar

@@ -26,7 +26,7 @@
             </div><!--fin col-md-6-->
             <div class="col-sm-6">
                 <div class="panel panel-warning">
-                    <div class="panel-heading text-center"><i class="fa fa-link"></i>&nbsp;<strong>Comprobar estado de Ticket</strong></div>
+                    <div class="panel-heading text-center"><i class="fa fa-link"></i>&nbsp;<strong>Tus tickets</strong></div>
                     <div class="panel-body text-center">
                         <img src="./img/old_ticket.png" alt="">
                         <h4>Colsultar estado de ticket</h4>
@@ -37,7 +37,7 @@
                                 <center>
                                     <button type="submit" class="btn btn-warning">Colsultar tus ticket</button>
                                 </center>
-                            </div>
+                            </center >
                         </form>
                     </div>
                 </div>

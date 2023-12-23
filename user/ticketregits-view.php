@@ -7,36 +7,11 @@
                 <img src="./img/msj.png" alt="Image" class="img-responsive animated tada">
             </div>
             <div class="col-sm-10">
-                <p class="lead">Bienvenido administrador, aqui se muestran todos los Tickets de Soporte UTJ los cuales
-                    podra eliminar, modificar.</p>
+                <p class="lead">Bienvenido en esta pestaña podras ver todos los ticket que has levantado recientemente.</p>
             </div>
         </div>
     </div>
     <?php
-    if (isset($_POST['id_del'])) {
-        $id = MysqlQuery::RequestPost('id_del');
-        if (MysqlQuery::Eliminar("ticket", "id='$id'")) {
-            echo '
-                            <div class="alert alert-info alert-dismissible fade in col-sm-3 animated bounceInDown" role="alert" style="position:fixed; top:70px; right:10px; z-index:10;"> 
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                <h4 class="text-center">TICKET ELIMINADO</h4>
-                                <p class="text-center">
-                                    El ticket fue eliminado del sistema con exito
-                                </p>
-                            </div>
-                        ';
-        } else {
-            echo '
-                            <div class="alert alert-danger alert-dismissible fade in col-sm-3 animated bounceInDown" role="alert" style="position:fixed; top:70px; right:10px; z-index:10;"> 
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                <h4 class="text-center">OCURRIÓ UN ERROR</h4>
-                                <p class="text-center">
-                                    No hemos podido eliminar el ticket
-                                </p>
-                            </div>
-                        ';
-        }
-    }
 
     /* Todos los tickets*/
     $num_ticket_all = Mysql::consulta("SELECT * FROM ticket WHERE nombre_usuario='$usuaro_sesion'");
@@ -73,6 +48,8 @@
                     <li><a href="./index.php?view=ticketregits&ticket=resolved" class="text-success"><i
                                     class="fa fa-thumbs-o-up"></i>&nbsp;&nbsp;Tickets resueltos&nbsp;<span
                                     class="badge progress-bar-success"><?php echo $num_total_res; ?></span></a></li>
+                    <li> <a href="./index.php?view=soporte" class="btn btn-warning btn-sm"><span
+                                    class="fa fa-reply"></span>&nbsp;&nbsp;Volver a soporte</a></li>
                 </ul>
             </div>
         </div>
@@ -172,7 +149,7 @@
                             </tbody>
                         </table>
                     <?php else: ?>
-                        <h2 class="text-center text-warning">No hay tickets registrados en el sistema</h2>
+                        <h2 class="text-center text-danger">No hay tickets registrados en el sistema</h2>
                     <?php endif; ?>
                 </div>
                 <?php

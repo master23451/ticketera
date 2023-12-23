@@ -57,8 +57,6 @@
         <div class="row">
             <div class="col-md-12">
                 <ul class="nav nav-pills nav-justified">
-                    <li> <a href="./index.php?view=ticket" class="btn btn-success btn-sm"><span
-                                    class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Levanta Ticket</a></li>
                     <li><a href="./admin.php?view=ticketadmin&ticket=all" class="text-danger"><i
                                     class="fa fa-list"></i>&nbsp;&nbsp;Todos los tickets&nbsp;&nbsp;<span
                                     class="badge progress-bar-danger"><?php echo $num_total_all; ?></span></a></li>
@@ -83,7 +81,7 @@
                     mysqli_set_charset($mysqli, "utf8");
 
                     $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
-                    $regpagina = 10;
+                    $regpagina = 15;
                     $inicio = ($pagina > 1) ? (($pagina * $regpagina) - $regpagina) : 0;
 
 
@@ -162,7 +160,7 @@
                             </tbody>
                         </table>
                     <?php else: ?>
-                        <h2 class="text-center text-warning">No hay tickets registrados en el sistema</h2>
+                        <h2 class="text-center text-danger">No hay tickets registrados en el sistema</h2>
                     <?php endif; ?>
                 </div>
                 <?php

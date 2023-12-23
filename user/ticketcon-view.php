@@ -1,4 +1,5 @@
 <?php if (isset($_SESSION['nombre']) && isset($_SESSION['tipo'])) {
+ $tipo = $_SESSION['tipo'];
 if(isset($_POST['del_ticket'])){
     $id=MysqlQuery::RequestPost('del_ticket');
 
@@ -43,7 +44,7 @@ if(mysqli_num_rows($consulta_tablaTicket)>=1){
         </div><!--fin row well-->
         <div class="row">
             <div class="col">
-                <a href="./index.php?view=soporte" class="btn btn-warning" style="margin-right: 50%"><i class="fa fa-reply"></i>&nbsp;&nbsp;Volver a soporte</a>
+                <a href="./index.php?view=ticketregits" class="btn btn-warning" style="margin-right: 50%"><i class="fa fa-reply"></i>&nbsp;&nbsp;Volver a la lista de ticket</a>
             </div>
             <br/>
             <div class="col">
@@ -87,14 +88,17 @@ if(mysqli_num_rows($consulta_tablaTicket)>=1){
                     <div class="panel-footer text-center">
                         <div class="row">
                             <h4>Opciones</h4>
+                            <?php
+                            if($tipo == "admin"):?>
                             <div class="col-sm-6">
                                 <form action="" method="POST">
-                                    <input type="text" value="<?php echo $lsT['serie']; ?>" name="del_ticket" hidden="">
+                                    <input type="hidden" value="<?php echo $lsT['serie']; ?>" name="del_ticket">
                                     <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span>&nbsp;  Eliminar ticket</button>
                                 </form>
                             </div>
+                            <?php endif; ?>
                             <br class="hidden-lg hidden-md hidden-sm">
-                            <div class="col-sm-6">
+                            <div class="col">
                                 <button id="save" class="btn btn-success" data-id="<?php echo $lsT['serie']; ?>"><span class="glyphicon glyphicon-floppy-disk"></span>&nbsp; Guardar ticket en PDF</button>
                             </div>
                         </div>
