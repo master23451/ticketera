@@ -71,6 +71,11 @@ if (isset($_SESSION['nombre']) && isset($_SESSION['tipo'])) {
             </div>
         </div><!--fin row 1-->
 
+        <div class="col">
+            <a href="./index.php?view=soporte" class="btn btn-warning" style="margin-right: 50%"><i class="fa fa-reply"></i>&nbsp;&nbsp;Volver a soporte</a>
+        </div>
+        <br/>
+
         <div class="row">
             <div class="col-sm-12">
                 <div class="panel panel-success">

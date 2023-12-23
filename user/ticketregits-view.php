@@ -1,4 +1,6 @@
-<?php if ($_SESSION['nombre'] != "" && $_SESSION['clave'] != "" && $_SESSION['tipo'] == "admin") { ?>
+<?php if(!$_SESSION['nombre']==""&&!$_SESSION['tipo']==""){
+    $usuaro_sesion = $_SESSION['nombre']
+    ?>
     <div class="container">
         <div class="row">
             <div class="col-sm-1">
@@ -37,19 +39,19 @@
     }
 
     /* Todos los tickets*/
-    $num_ticket_all = Mysql::consulta("SELECT * FROM ticket");
+    $num_ticket_all = Mysql::consulta("SELECT * FROM ticket WHERE nombre_usuario='$usuaro_sesion'");
     $num_total_all = mysqli_num_rows($num_ticket_all);
 
     /* Tickets pendientes*/
-    $num_ticket_pend = Mysql::consulta("SELECT * FROM ticket WHERE estado_ticket='Pendiente'");
+    $num_ticket_pend = Mysql::consulta("SELECT * FROM ticket WHERE estado_ticket='Pendiente' AND nombre_usuario='$usuaro_sesion'");
     $num_total_pend = mysqli_num_rows($num_ticket_pend);
 
     /* Tickets en proceso*/
-    $num_ticket_proceso = Mysql::consulta("SELECT * FROM ticket WHERE estado_ticket='En proceso'");
+    $num_ticket_proceso = Mysql::consulta("SELECT * FROM ticket WHERE estado_ticket='En proceso' AND nombre_usuario='$usuaro_sesion'");
     $num_total_proceso = mysqli_num_rows($num_ticket_proceso);
 
     /* Tickets resueltos*/
-    $num_ticket_res = Mysql::consulta("SELECT * FROM ticket WHERE estado_ticket='Resuelto'");
+    $num_ticket_res = Mysql::consulta("SELECT * FROM ticket WHERE estado_ticket='Resuelto' AND nombre_usuario='$usuaro_sesion'");
     $num_total_res = mysqli_num_rows($num_ticket_res);
     ?>
 
@@ -59,16 +61,16 @@
                 <ul class="nav nav-pills nav-justified">
                     <li> <a href="./index.php?view=ticket" class="btn btn-success btn-sm"><span
                                     class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Levanta Ticket</a></li>
-                    <li><a href="./admin.php?view=ticketadmin&ticket=all" class="text-danger"><i
+                    <li><a href="./index.php?view=ticketregits&ticket=all" class="text-danger"><i
                                     class="fa fa-list"></i>&nbsp;&nbsp;Todos los tickets&nbsp;&nbsp;<span
                                     class="badge progress-bar-danger"><?php echo $num_total_all; ?></span></a></li>
-                    <li><a href="./admin.php?view=ticketadmin&ticket=pending" class="text-warning"><i
+                    <li><a href="./index.php?view=ticketregits&ticket=pending" class="text-warning"><i
                                     class="fa fa-envelope"></i>&nbsp;&nbsp;Tickets pendientes&nbsp;&nbsp;<span
                                     class="badge progress-bar-warning"><?php echo $num_total_pend; ?></span></a></li>
-                    <li><a href="./admin.php?view=ticketadmin&ticket=process" class="text-primary"><i
+                    <li><a href="./index.php?view=ticketregits&ticket=process" class="text-primary"><i
                                     class="fa fa-folder-open"></i>&nbsp;&nbsp;Tickets en proceso&nbsp;&nbsp;<span
                                     class="badge progress-bar-info"><?php echo $num_total_proceso; ?></span></a></li>
-                    <li><a href="./admin.php?view=ticketadmin&ticket=resolved" class="text-success"><i
+                    <li><a href="./index.php?view=ticketregits&ticket=resolved" class="text-success"><i
                                     class="fa fa-thumbs-o-up"></i>&nbsp;&nbsp;Tickets resueltos&nbsp;<span
                                     class="badge progress-bar-success"><?php echo $num_total_res; ?></span></a></li>
                 </ul>
@@ -89,18 +91,18 @@
 
                     if (isset($_GET['ticket'])) {
                         if ($_GET['ticket'] == "all") {
-                            $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket LIMIT $inicio, $regpagina";
+                            $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket WHERE nombre_usuario='$usuaro_sesion' LIMIT $inicio, $regpagina";
                         } elseif ($_GET['ticket'] == "pending") {
-                            $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket WHERE estado_ticket='Pendiente' LIMIT $inicio, $regpagina";
+                            $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket WHERE estado_ticket='Pendiente' AND nombre_usuario='$usuaro_sesion' LIMIT $inicio, $regpagina";
                         } elseif ($_GET['ticket'] == "process") {
-                            $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket WHERE estado_ticket='En proceso' LIMIT $inicio, $regpagina";
+                            $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket WHERE estado_ticket='En proceso' AND nombre_usuario='$usuaro_sesion' LIMIT $inicio, $regpagina";
                         } elseif ($_GET['ticket'] == "resolved") {
-                            $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket WHERE estado_ticket='Resuelto' LIMIT $inicio, $regpagina";
+                            $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket WHERE estado_ticket='Resuelto' AND nombre_usuario='$usuaro_sesion' LIMIT $inicio, $regpagina";
                         } else {
-                            $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket LIMIT $inicio, $regpagina";
+                            $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket WHERE nombre_usuario='$usuaro_sesion' LIMIT $inicio, $regpagina";
                         }
                     } else {
-                        $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket LIMIT $inicio, $regpagina";
+                        $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket WHERE nombre_usuario='$usuaro_sesion' LIMIT $inicio, $regpagina";
                     }
 
 
@@ -136,22 +138,30 @@
                                     <td class="text-center"><strong><?php echo $ct; ?></strong></td>
                                     <td class="text-center"><?php echo $row['fecha']; ?></td>
                                     <td class="text-center"><?php echo $row['serie']; ?></td>
-                                    <td class="text-center"><?php echo $row['estado_ticket']; ?></td>
+                                    <td class="text-center"><?php
+                                        switch($row['estado_ticket']){
+                                            case "Pendiente":
+                                                echo '<span class="label label-warning">Pendiente</span>';
+                                                break;
+                                            case "En Proceso":
+                                                echo '<span class="label label-primary">En Proceso</span>';
+                                                break;
+                                            case "Resuelto":
+                                                echo '<span class="label label-success">Resuelto</span>';
+                                                break;
+                                        }
+                                        ?></td>
                                     <td class="text-center"><?php echo $row['nombre_usuario']; ?></td>
                                     <td class="text-center"><?php echo $row['mensaje']; ?></td>
                                     <td class="text-center"><?php echo $row['email_cliente']; ?></td>
                                     <td class="text-center"><?php echo $row['departamento']; ?></td>
                                     <td class="text-center" style="width: 10%">
 
-                                        <a href="admin.php?view=ticketedit&id=<?php echo $row['id']; ?>"
-                                           class="btn btn-sm btn-warning"><i class="fa fa-pencil"
-                                                                             aria-hidden="true"></i></a>
-
-                                        <form action="" method="POST" style="display: inline-block;">
-                                            <input type="hidden" name="id_del" value="<?php echo $row['id']; ?>">
-                                            <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"
-                                                                                                   aria-hidden="true"></i>
-                                            </button>
+                                        <form class="form-horizontal" role="form" method="GET" action="./index.php" >
+                                            <input type="hidden" name="view" value="ticketcon">
+                                            <input type="hidden" name="id_consul" value="<?php echo $row['serie']; ?>">
+                                            <input type="hidden" name="email_consul" value="<?php echo $_SESSION['email'] ?>" readonly>
+                                            <button class="btn btn-sm btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Ver</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -183,7 +193,7 @@
                                 </li>
                             <?php else: ?>
                                 <li>
-                                    <a href="./admin.php?view=ticketadmin&ticket=<?php echo $ticketselected; ?>&pagina=<?php echo $pagina - 1; ?>"
+                                    <a href="./index.php?view=ticketregits&ticket=<?php echo $ticketselected; ?>&pagina=<?php echo $pagina - 1; ?>"
                                        aria-label="Previous">
                                         <span aria-hidden="true">&laquo;</span>
                                     </a>
@@ -194,9 +204,9 @@
                             <?php
                             for ($i = 1; $i <= $numeropaginas; $i++) {
                                 if ($pagina == $i) {
-                                    echo '<li class="active"><a href="./admin.php?view=ticketadmin&ticket=' . $ticketselected . '&pagina=' . $i . '">' . $i . '</a></li>';
+                                    echo '<li class="active"><a href="./index.php?view=ticketregits&ticket=' . $ticketselected . '&pagina=' . $i . '">' . $i . '</a></li>';
                                 } else {
-                                    echo '<li><a href="./admin.php?view=ticketadmin&ticket=' . $ticketselected . '&pagina=' . $i . '">' . $i . '</a></li>';
+                                    echo '<li><a href="./index.php?view=ticketregits&ticket=' . $ticketselected . '&pagina=' . $i . '">' . $i . '</a></li>';
                                 }
                             }
                             ?>
@@ -210,7 +220,7 @@
                                 </li>
                             <?php else: ?>
                                 <li>
-                                    <a href="./admin.php?view=ticketadmin&ticket=<?php echo $ticketselected; ?>&pagina=<?php echo $pagina + 1; ?>"
+                                    <a href="./index.php?view=ticketregits&ticket=<?php echo $ticketselected; ?>&pagina=<?php echo $pagina + 1; ?>"
                                        aria-label="Previous">
                                         <span aria-hidden="true">&raquo;</span>
                                     </a>
@@ -222,19 +232,19 @@
             </div>
         </div>
     </div><!--container principal-->
-    <?php
-} else {
+<?php
+}else{
     ?>
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
-                <img src="./img/Stop.png" alt="Image" class="img-responsive animated slideInDown"/><br>
-                <img src="./img/SadTux.png" alt="Image" class="img-responsive"/>
+                <img src="img/Stop.png" alt="Image" class="img-responsive animated slideInDown"/><br>
+                <img src="img/SadTux.png" alt="Image" class="img-responsive"/>
 
             </div>
             <div class="col-sm-7 animated flip">
-                <h1 class="text-danger">Lo sentimos esta página es solamente para administradores de LinuxStore</h1>
-                <h3 class="text-info text-center">Inicia sesión como administrador para poder acceder</h3>
+                <h1 class="text-danger">Lo sentimos esta página es solamente para usuarios registrados en Soporte UTJ</h1>
+                <h3 class="text-info text-center">Inicia sesión para poder acceder</h3>
             </div>
             <div class="col-sm-1">&nbsp;</div>
         </div>
@@ -242,9 +252,20 @@
     <?php
 }
 ?>
-
 <script>
-    $(document).ready( function () {
+    $(document).ready(function(){
+        $("#input_user").keyup(function(){
+            $.ajax({
+                url:"./process/val.php?id="+$(this).val(),
+                success:function(data){
+                    $("#com_form").html(data);
+                }
+            });
+        });
+    });
+</script>
+<script>
+        $(document).ready( function () {
         $('#tablaDatos').DataTable({
             language:{
                 sLengthMenu: "Mostrar _MENU_ Registros",

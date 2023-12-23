@@ -35,14 +35,29 @@ if($_SESSION['tipo']!="admin"){
             </div>
           </div>
         </div>
-        <?php
+        <div class="container-fluid">
+            <?php
             $WhiteList=["ticketadmin","ticketedit","users","admin","config"];
             if(isset($_GET['view']) && in_array($_GET['view'], $WhiteList) && is_file("./admin/".$_GET['view']."-view.php")){
                 include "./admin/".$_GET['view']."-view.php";
             }else{
-                echo '<h2 class="text-center">Lo sentimos, la opción que ha seleccionado no se encuentra disponible</h2>';
+                echo '<div class="container">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <img src="./img/Stop.png" alt="Image" class="img-responsive"/><br>
+                                <img src="./img/SadTux.png" alt="Image" class="img-responsive"/>
+
+                            </div>
+                            <div class="col-sm-7 text-center">
+                                <h1 class="text-danger">Lo sentimos, la opción que ha seleccionado no se encuentra disponible</h1>
+                                <h3 class="text-info">Por favor intente nuevamente</h3>
+                            </div>
+                            <div class="col-sm-1">&nbsp;</div>
+                        </div>
+                    </div>';
             }
-        ?>
+            ?>
+        </div>
 
 
         <?php include './inc/footer.php'; ?>

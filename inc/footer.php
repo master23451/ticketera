@@ -1,6 +1,6 @@
 <footer>
   <div class="container">
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-sm-4">
         <h4 style="color: #000000"><strong>Siguenos</strong></h4>
         <a href="#" style="color: white"><i class="fa fa-facebook" aria-hidden="true"></i> &nbsp; Facebook</a><br>
@@ -26,7 +26,7 @@
                 E-mail: <a href="#">soporte@utj.edu.mx</a>
             </p>
         </div>
-      <!--<div class="col-sm-4">
+      <div class="col-sm-4">
         <h4 style="color: #000000"><strong>Suscribete</strong></h4>
         <p style="color: white">Suscribete para recibir ofertas y noticias de nuestros boletines de seguridad</p>
         <form action="" method="POST">
@@ -37,8 +37,8 @@
             </span>
           </div>
         </form>
-      </div>-->
-    </div>
+      </div>
+    </div> -->
     <h6 class="text-center" style="color: #FFF;">Universidad Tecnológica de Jalisco CopyRight © 1999-2023</h6>
   </div>
 </footer>

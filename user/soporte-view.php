@@ -24,8 +24,24 @@
                     </div>
                 </div>
             </div><!--fin col-md-6-->
-
             <div class="col-sm-6">
+                <div class="panel panel-warning">
+                    <div class="panel-heading text-center"><i class="fa fa-link"></i>&nbsp;<strong>Comprobar estado de Ticket</strong></div>
+                    <div class="panel-body text-center">
+                        <img src="./img/old_ticket.png" alt="">
+                        <h4>Colsultar estado de ticket</h4>
+                        <h6>Aqui podras revisar todos los ticket que se han levantado</h6>
+                        <form class="form-horizontal" role="form" method="GET" action="./index.php">
+                            <input type="hidden" name="view" value="ticketregits">
+                            <center class="form-group">
+                                <center>
+                                    <button type="submit" class="btn btn-warning">Colsultar tus ticket</button>
+                                </center>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+           <!-- <div class="col-sm-6">
                 <div class="panel panel-warning">
                     <div class="panel-heading text-center"><i class="fa fa-link"></i>&nbsp;<strong>Comprobar estado de Ticket</strong></div>
                     <div class="panel-body text-center">
@@ -47,12 +63,12 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-sm-10">
-                                    <button type="submit" class="btn btn-warning">Colsultar</button>
+                                    <button type="submit" class="btn btn-warning">Colsultar tus ticket</button>
                                 </div>
                             </div>
                         </form>
                     </div>
-                </div>
+                </div> -->
             </div><!--fin col-md-6-->
         </div><!--fin row 2-->
     </div><!--fin container-->

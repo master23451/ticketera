@@ -61,10 +61,10 @@ if (isset($_POST['correo_login']) && isset($_POST['contrasena_login'])) {
                                     <a href="admin.php?view=users"><span class="glyphicon glyphicon-user"></span> &nbsp;Administrar
                                         Usuarios</a>
                                 </li>
-                                <li>
+                                <!--<li>
                                     <a href="admin.php?view=admin"><span class="glyphicon glyphicon-user"></span> &nbsp;Administrar
                                         Administradores</a>
-                                </li>
+                                </li> -->
                                 <li>
                                     <a href="admin.php?view=config"><i class="fa fa-cogs"></i> &nbsp; Configuracion</a>
                                 </li>
