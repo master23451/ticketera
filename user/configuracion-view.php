@@ -1,4 +1,4 @@
-<?php if(!$_SESSION['nombre']==""&&!$_SESSION['tipo']==""){ 
+<?php if(!isset($_SESSION['nombre'])=="" && !isset($_SESSION['tipo'])==""){
         
         /*Script para eliminar cuenta*/
         if(isset($_POST['usuario_delete']) && isset($_POST['clave_delete'])){
@@ -149,17 +149,17 @@
 }else{
 ?>
     <div class="container">
-        <div class="row">
+        <div class="row animated fade-out-up">
             <div class="col-sm-4">
-                <img src="img/Stop.png" alt="Image" class="img-responsive animated slideInDown"/><br>
-                <img src="img/SadTux.png" alt="Image" class="img-responsive"/>
-                
+                <img src="img/Stop.png" alt="Image" class="img-responsive"/><br>
             </div>
-            <div class="col-sm-7 animated flip">
+            <div class="col-sm-7">
                 <h1 class="text-danger">Lo sentimos esta página es solamente para usuarios registrados en Soporte UTJ</h1>
-                <h3 class="text-info text-center">Inicia sesión para poder acceder</h3>
+                <h3 class="text-success text-center">Inicia sesión para poder acceder</h3>
             </div>
-            <div class="col-sm-1">&nbsp;</div>
+            <div class="col-sm-12">
+                <img src="img/SadTux.png" alt="Image" class="img-responsive"/><br>
+            </div>
         </div>
     </div>
 <?php
