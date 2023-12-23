@@ -257,6 +257,8 @@
                 responsive: true,
             },
             paging: false,
+            scrollCollapse: true,
+            scrollY: '50vh'
         });
     });
 </script>

@@ -85,7 +85,7 @@
                     mysqli_set_charset($mysqli, "utf8");
 
                     $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
-                    $regpagina = 10;
+                    $regpagina = 15;
                     $inicio = ($pagina > 1) ? (($pagina * $regpagina) - $regpagina) : 0;
 
 
@@ -278,6 +278,8 @@
                 responsive: true,
             },
             paging: false,
+            scrollCollapse: true,
+            scrollY: '50vh'
         });
     });
 </script>
