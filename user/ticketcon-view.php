@@ -120,7 +120,7 @@ if(mysqli_num_rows($consulta_tablaTicket)>=1){
                 <h3 class="text-warning"><i class="fa fa-check"></i> El Ticket ha sido eliminado completamente.</h3>
                 <h3 class="text-warning"><i class="fa fa-check"></i> Los datos ingresados no son correctos.</h3>
                 <br>
-                <h3 class="text-primary"> Por favor verifique que su <strong>id ticket</strong> y <strong>email</strong> sean correctos, e intente nuevamente.</h3>
+                <h3> Por favor verifique que su <strong>id ticket</strong> y <strong>email</strong> sean correctos, e intente nuevamente.</h3>
                 <h4><a href="./index.php?view=soporte" class="btn btn-danger"><i class="fa fa-reply"></i> Regresar a soporte</a></h4>
             </div>
             <div class="col-sm-1">&nbsp;</div>

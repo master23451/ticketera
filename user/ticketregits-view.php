@@ -1,5 +1,5 @@
 <?php if(!isset($_SESSION['nombre'])=="" && !isset($_SESSION['tipo'])==""){
-    $usuaro_sesion = $_SESSION['nombre']
+    $email_sesion = $_SESSION['email']
     ?>
     <div class="container">
         <div class="row">
@@ -14,19 +14,19 @@
     <?php
 
     /* Todos los tickets*/
-    $num_ticket_all = Mysql::consulta("SELECT * FROM ticket WHERE nombre_usuario='$usuaro_sesion'");
+    $num_ticket_all = Mysql::consulta("SELECT * FROM ticket WHERE email_cliente='$email_sesion'");
     $num_total_all = mysqli_num_rows($num_ticket_all);
 
     /* Tickets pendientes*/
-    $num_ticket_pend = Mysql::consulta("SELECT * FROM ticket WHERE estado_ticket='Pendiente' AND nombre_usuario='$usuaro_sesion'");
+    $num_ticket_pend = Mysql::consulta("SELECT * FROM ticket WHERE estado_ticket='Pendiente' AND email_cliente='$email_sesion'");
     $num_total_pend = mysqli_num_rows($num_ticket_pend);
 
     /* Tickets en proceso*/
-    $num_ticket_proceso = Mysql::consulta("SELECT * FROM ticket WHERE estado_ticket='En proceso' AND nombre_usuario='$usuaro_sesion'");
+    $num_ticket_proceso = Mysql::consulta("SELECT * FROM ticket WHERE estado_ticket='En proceso' AND email_cliente='$email_sesion'");
     $num_total_proceso = mysqli_num_rows($num_ticket_proceso);
 
     /* Tickets resueltos*/
-    $num_ticket_res = Mysql::consulta("SELECT * FROM ticket WHERE estado_ticket='Resuelto' AND nombre_usuario='$usuaro_sesion'");
+    $num_ticket_res = Mysql::consulta("SELECT * FROM ticket WHERE estado_ticket='Resuelto' AND email_cliente='$email_sesion'");
     $num_total_res = mysqli_num_rows($num_ticket_res);
     ?>
 
@@ -68,18 +68,18 @@
 
                     if (isset($_GET['ticket'])) {
                         if ($_GET['ticket'] == "all") {
-                            $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket WHERE nombre_usuario='$usuaro_sesion' LIMIT $inicio, $regpagina";
+                            $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket WHERE email_cliente='$email_sesion' LIMIT $inicio, $regpagina";
                         } elseif ($_GET['ticket'] == "pending") {
-                            $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket WHERE estado_ticket='Pendiente' AND nombre_usuario='$usuaro_sesion' LIMIT $inicio, $regpagina";
+                            $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket WHERE estado_ticket='Pendiente' AND email_cliente='$email_sesion' LIMIT $inicio, $regpagina";
                         } elseif ($_GET['ticket'] == "process") {
-                            $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket WHERE estado_ticket='En proceso' AND nombre_usuario='$usuaro_sesion' LIMIT $inicio, $regpagina";
+                            $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket WHERE estado_ticket='En proceso' AND email_cliente='$email_sesion' LIMIT $inicio, $regpagina";
                         } elseif ($_GET['ticket'] == "resolved") {
-                            $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket WHERE estado_ticket='Resuelto' AND nombre_usuario='$usuaro_sesion' LIMIT $inicio, $regpagina";
+                            $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket WHERE estado_ticket='Resuelto' AND email_cliente='$email_sesion' LIMIT $inicio, $regpagina";
                         } else {
-                            $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket WHERE nombre_usuario='$usuaro_sesion' LIMIT $inicio, $regpagina";
+                            $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket WHERE email_cliente='$email_sesion' LIMIT $inicio, $regpagina";
                         }
                     } else {
-                        $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket WHERE nombre_usuario='$usuaro_sesion' LIMIT $inicio, $regpagina";
+                        $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM ticket WHERE email_cliente='$email_sesion' LIMIT $inicio, $regpagina";
                     }
 
 
