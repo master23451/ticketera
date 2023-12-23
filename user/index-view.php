@@ -25,12 +25,12 @@
           <div class="carousel-caption">
               </div>
        </div>
-       <div class="item ">
+       <div class="item">
           <img src="img/slider3.png" alt="">
           <div class="carouse bl-caption">
                        </div>
         </div>
-        <div class="item ">
+        <div class="item">
           <img src="img/slider4.png" alt="">
           <div class="carousel-caption">
               </div>
