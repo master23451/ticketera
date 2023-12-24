@@ -38,7 +38,7 @@ class Config_Correo extends PHPMailer
        <p style='font-size:17px;'><strong>Detalle del problema: </strong><br/> ".$detalle_ticket."</p>
        <p style='font-size:15px;'><strong>Tecnico asigando: </strong> ".$email_tecnico."</p>
        <hr/>
-       <p style='font-size:12px; font-family:Verdana, Geneva, sans-serif;'>¡Gracias por reportarnos su problema! Buscaremos una solución para su producto lo mas pronto posible.</p>
+       <center><p style='font-size:12px; font-family:Verdana, Geneva, sans-serif;'>¡Gracias por reportarnos su problema! Buscaremos una solución para su producto lo mas pronto posible.</p></center>
        </td>
        </tr></tbody>";
         $mensaje .= "</table>";
@@ -98,7 +98,7 @@ class Config_Correo extends PHPMailer
        <p style='font-size:15px;'><strong>Solucion del pronlema: </strong><br/> ".$ticket_solucion."</p>
         <p style='font-size:15px;'><strong>Tecnico que soluciono el problema: </strong> ".$correo_tecnico."</p>
        <hr/>
-       <p style='font-size:12px; font-family:Verdana, Geneva, sans-serif;'>¡Gracias por reportarnos su problema! Buscaremos una solución para su producto lo mas pronto posible.</p>
+       <center><p style='font-size:12px; font-family:Verdana, Geneva, sans-serif;'>¡Gracias por reportarnos su problema! Buscaremos una solución para su producto lo mas pronto posible.</p></center>
        </td>
        </tr></tbody>";
         $mensaje .= "</table>";
