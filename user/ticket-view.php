@@ -96,7 +96,7 @@ if (isset($_SESSION['nombre']) && isset($_SESSION['tipo'])) {
                                             <div class='col-sm-10'>
                                                 <div class="input-group">
                                                     <input class="form-control" type="text" id="fechainput"
-                                                           placeholder="Fecha" name="fecha_ticket" required="" readonly value="<?php echo date("m/d/y"); ?>">
+                                                           placeholder="Fecha" name="fecha_ticket" required="" readonly value="<?php echo date("d/m/Y"); ?>">
                                                     <span class="input-group-addon"><i
                                                                 class="fa fa-calendar"></i></span>
                                                 </div>
