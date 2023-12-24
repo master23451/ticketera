@@ -23,8 +23,7 @@ if (isset($_SESSION['nombre']) && isset($_SESSION['tipo'])) {
         $asunto_ticket = MysqlQuery::RequestPost('asunto_ticket');
         $mensaje_ticket = MysqlQuery::RequestPost('mensaje_ticket');
         $estado_ticket = "Pendiente";
-        $cabecera = "to: " . $_SESSION['email'] . "\r\n";
-        $mensaje_mail = "Detalle del problema : " . $mensaje_ticket . "." ."\n";
+        $mensaje_mail = $mensaje_ticket . "." ."\n";
         $mensaje_mail = wordwrap($mensaje_mail, 70, "\r\n");
 
         if (MysqlQuery::Guardar("ticket", "fecha, nombre_usuario, email_cliente, departamento, asunto, mensaje, estado_ticket, serie", "'$fecha_ticket', '$nombre_ticket', '$email_ticket', '$departamento_ticket', '$asunto_ticket', '$mensaje_ticket', '$estado_ticket','$id_ticket'")) {
