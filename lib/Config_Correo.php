@@ -32,7 +32,7 @@ class Config_Correo extends PHPMailer
        <tr>
        <td colspan='4' style='padding:15px;'>
        <center>
-       <p style='font-size:19px;'><strong>ID del ticket: ".$id_ticket." </strong> - ".$asunto_ticket."</p>
+       <p style='font-size:19px;'><strong>ID del ticket: ".$id_ticket." </strong><br/> ".$asunto_ticket."</p>
        <p style='font-size:13px; color: #ec971f'><strong>Estatus:</strong> ".$estatus_ticket. "</p>
        </center>
        <p style='font-size:17px;'><strong>Detalle del problema: </strong><br/> ".$detalle_ticket."</p>
@@ -91,7 +91,7 @@ class Config_Correo extends PHPMailer
        <tr>
        <td colspan='4' style='padding:15px;'>
        <center>
-       <p style='font-size:19px;'><strong>ID del ticket: ".$id_ticket." </strong> - ".$asunto_ticket."</p>
+       <p style='font-size:19px;'><strong>ID del ticket: ".$id_ticket." </strong><br/> ".$asunto_ticket."</p>
        <p style='font-size:13px; color: $color'><strong>Estatus:</strong> ".$estatus. "</p>
        </center>
        <p style='font-size:17px;'><strong>Detalle del problema: </strong><br/> ".$detalle_ticket."</p>
