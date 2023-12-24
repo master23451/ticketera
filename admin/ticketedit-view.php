@@ -54,7 +54,7 @@
                 <img src="./img/Edit.png" alt="Image" class="img-responsive animated tada">
             </div>
             <div class="col-sm-pull-1">
-                <a href="./admin.php?view=ticketadmin" class="btn btn-warning btn-sm fa-pull-right"><i class="fa fa-reply"></i>&nbsp;&nbsp;Volver administrar Tickets</a>
+                <a href="./admin.php?view=ticketadmin" class="btn btn-danger btn-sm fa-pull-right"><i class="fa fa-reply"></i>&nbsp;&nbsp;Volver administrar Tickets</a>
             </div>
         </div>
     </div>

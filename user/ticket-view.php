@@ -69,12 +69,9 @@ if (isset($_SESSION['nombre']) && isset($_SESSION['tipo'])) {
                     usted cuando llene y nos envie el siguiente formulario.</p>
             </div>
         </div><!--fin row 1-->
-
-        <div class="col">
-            <a href="./index.php?view=soporte" class="btn btn-warning" style="margin-right: 50%"><i class="fa fa-reply"></i>&nbsp;&nbsp;Volver a soporte</a>
-        </div>
+        <a href="./index.php?view=soporte" class="btn btn-danger btn-sm fa-pull-right"><i class="fa fa-reply"></i>&nbsp;&nbsp;Volver a soporte</a>
         <br/>
-
+        <br/>
         <div class="row">
             <div class="col-sm-12">
                 <div class="panel panel-success">

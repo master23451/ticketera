@@ -30,6 +30,8 @@
     $num_total_res = mysqli_num_rows($num_ticket_res);
     ?>
 
+    <a href="./index.php?view=soporte" class="btn btn-danger btn-sm fa-pull-right"><span
+                class="fa fa-reply"></span>&nbsp;&nbsp;Volver a soporte</a>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -48,8 +50,6 @@
                     <li><a href="./index.php?view=ticketregits&ticket=resolved" class="text-success"><i
                                     class="fa fa-thumbs-o-up"></i>&nbsp;&nbsp;Tickets resueltos&nbsp;<span
                                     class="badge progress-bar-success"><?php echo $num_total_res; ?></span></a></li>
-                    <li> <a href="./index.php?view=soporte" class="btn btn-warning btn-sm"><span
-                                    class="fa fa-reply"></span>&nbsp;&nbsp;Volver a soporte</a></li>
                 </ul>
             </div>
         </div>
