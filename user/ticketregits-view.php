@@ -120,7 +120,7 @@
                                             case "Pendiente":
                                                 echo '<span class="label label-warning">Pendiente</span>';
                                                 break;
-                                            case "En Proceso":
+                                            case "En proceso":
                                                 echo '<span class="label label-primary">En Proceso</span>';
                                                 break;
                                             case "Resuelto":

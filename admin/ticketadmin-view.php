@@ -134,7 +134,19 @@
                                     <td class="text-center"><strong><?php echo $ct; ?></strong></td>
                                     <td class="text-center"><?php echo $row['fecha']; ?></td>
                                     <td class="text-center"><?php echo $row['serie']; ?></td>
-                                    <td class="text-center"><?php echo $row['estado_ticket']; ?></td>
+                                    <td class="text-center"><?php
+                                        switch($row['estado_ticket']){
+                                            case "Pendiente":
+                                                echo '<span class="label label-warning">Pendiente</span>';
+                                                break;
+                                            case "En proceso":
+                                                echo '<span class="label label-primary">En Proceso</span>';
+                                                break;
+                                            case "Resuelto":
+                                                echo '<span class="label label-success">Resuelto</span>';
+                                                break;
+                                        }
+                                        ?></td>
                                     <td class="text-center"><?php echo $row['nombre_usuario']; ?></td>
                                     <td class="text-center"><?php echo $row['mensaje']; ?></td>
                                     <td class="text-center"><?php echo $row['email_cliente']; ?></td>

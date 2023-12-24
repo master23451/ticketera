@@ -25,7 +25,7 @@ class Config_Correo extends PHPMailer
         }
     }
 
-    public function crear_correo($email_solicitante, $email_tecnico, $id_ticket, $asunto_ticket, $detalle_ticket, $estatus_ticket, $cc_correo = null)
+    public function crear_correo($email_solicitante, $email_tecnico, $id_ticket, $asunto_ticket, $detalle_ticket, $estatus_ticket)
     {
         $mensaje  = "<html><body>";
         $mensaje .= "<table width='100%' bgcolor='#e0e0e0' cellpadding='0' cellspacing='0' border='0'>";
@@ -65,7 +65,7 @@ class Config_Correo extends PHPMailer
         }
     }
 
-    public function responder_correo($email_solicitante, $id_ticket, $asunto_ticket, $detalle_ticket, $estatus_ticket, $ticket_solucion,  $cc_correo = null)
+    public function responder_correo($email_solicitante, $id_ticket, $asunto_ticket, $detalle_ticket, $estatus_ticket, $ticket_solucion,  $correo_tecnico)
     {
         $estatus = "";
         $color = "";
@@ -108,6 +108,7 @@ class Config_Correo extends PHPMailer
         try {
             $this->setFrom(AUTH_USERNAME);
             $this->addAddress($email_solicitante);
+            $this->addAddress($correo_tecnico);
             $this->Subject = "ID ".$id_ticket." - ".$asunto_ticket;
             $this->Body = $mensaje;
             $this->isHTML();

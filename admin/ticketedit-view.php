@@ -1,5 +1,7 @@
 <?php if( $_SESSION['nombre']!="" && $_SESSION['clave']!="" && $_SESSION['tipo']=="admin"){ ?>
     <?php
+    $correo_admin = $_SESSION['email'];
+
 
     $id = MysqlQuery::RequestGet('id');
     $sql = Mysql::consulta("SELECT * FROM ticket WHERE id= '$id'");
@@ -26,7 +28,7 @@
             ';
             //mail($email_edit, $asunto_edit, $mensaje_mail, $cabecera);
             $actualizar_correo = new Config_Correo();
-            $actualizar_correo->responder_correo($reg['email_cliente'], $reg['serie'], $reg['asunto'], $reg['mensaje'],  $estado_edit, $solucion_edit);
+            $actualizar_correo->responder_correo($reg['email_cliente'], $reg['serie'], $reg['asunto'], $reg['mensaje'],  $estado_edit, $solucion_edit, $correo_admin);
 
         }else{
             echo '
