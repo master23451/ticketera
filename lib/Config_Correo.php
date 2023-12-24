@@ -74,7 +74,7 @@ class Config_Correo extends PHPMailer
                 break;
             case 'En proceso':
                 $estatus = "En proceso";
-                $color = "#ffd304";
+                $color = "#0569b2";
                 break;
             case 'Resuelto':
                 $estatus = "Resuelto";
