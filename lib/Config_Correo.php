@@ -12,17 +12,13 @@ class Config_Correo extends PHPMailer
     public function __construct()
     {
         parent::__construct();
-        try{
-            $this->isSMTP();
-            $this->Host=SMTP;
-            $this->Port=SMTP_PORT;
-            $this->SMTPSecure=SMTP_SECURE;
-            $this->SMTPAuth=true;
-            $this->Username=AUTH_USERNAME;
-            $this->Password=AUTH_PASSWORD;
-        }catch (Exception $e){
-            echo 'Error al mandar el correo: '. $e->getMessage();
-        }
+        $this->isSMTP();
+        $this->Host=SMTP;
+        $this->Port=SMTP_PORT;
+        $this->SMTPSecure=SMTP_SECURE;
+        $this->SMTPAuth=true;
+        $this->Username=AUTH_USERNAME;
+        $this->Password=AUTH_PASSWORD;
     }
 
     public function crear_correo($email_solicitante, $email_tecnico, $id_ticket, $asunto_ticket, $detalle_ticket, $estatus_ticket)
