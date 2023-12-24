@@ -18,7 +18,7 @@ header('Content-Type: text/html; charset=UTF-8');
           <div class="row">
             <div class="col-sm-12">
               <div class="page-header">
-                <h1 class="animated lightSpeedIn"><strong>Soporte Tecnico </strong></h1>
+                <h1 class="animated lightSpeedIn"><strong>Soporte Tecnico UTJ</strong></h1>
                 <span class="label label-success">Universidad Tecnologica de Jalisco</span>
                 <p class="pull-right text-success">
                   <strong>
