@@ -133,10 +133,10 @@
                                 ?>
                                 <tr>
                                     <td class="text-center"><strong><?php echo $ct; ?></strong></td>
-                                    <td class="text-center col"><?php echo $row['fecha']; ?></td>
+                                    <td class="text-center"><?php echo $row['fecha']; ?></td>
                                     <td class="text-center"><?php echo $row['serie']; ?></td>
                                     <td class="text-center"><?php echo $row['asunto']; ?></td>
-                                    <td class="text-center"><?php echo $row['mensaje']; ?></td>
+                                    <td class="text-center" style="width: 100%"><?php echo $row['mensaje']; ?></td>
                                     <td class="text-center"><?php
                                         switch($row['estado_ticket']){
                                             case "Pendiente":
