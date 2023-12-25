@@ -118,7 +118,7 @@
                                 <th class="text-center">Fecha</th>
                                 <th class="text-center">Serie</th>
                                 <th class="text-center">Servicio</th>
-                                <th class="text-center">Detalle</th>
+                                <th class="text-center">Detalles del servicio</th>
                                 <th class="text-center">Estado</th>
                                 <th class="text-center">Usuario solicitante</th>
                                 <th class="text-center">Email</th>

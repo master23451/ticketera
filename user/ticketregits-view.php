@@ -100,11 +100,12 @@
                                 <th class="text-center col">#</th>
                                 <th class="text-center col">Fecha</th>
                                 <th class="text-center col">Serie</th>
-                                <th class="text-center col">Estado</th>
-                                <th class="text-center col">Solicitante</th>
                                 <th class="text-center col">Servicio</th>
+                                <th class="text-center col">detalles del servicio</th>
+                                <th class="text-center col">Estado</th>
+                                <th class="text-center col">Usuario solicitante</th>
                                 <th class="text-center col">Email</th>
-                                <th class="text-center col">Tecnico</th>
+                                <th class="text-center col">Tecnico asignado</th>
                                 <th class="text-center col">Opciones</th>
                             </tr>
                             </thead>
@@ -117,6 +118,8 @@
                                     <td class="text-center"><strong><?php echo $ct; ?></strong></td>
                                     <td class="text-center"><?php echo $row['fecha']; ?></td>
                                     <td class="text-center"><?php echo $row['serie']; ?></td>
+                                    <td class="text-center"><?php echo $row['asunto']; ?></td>
+                                    <td class="text-center"><?php echo $row['mensaje']; ?></td>
                                     <td class="text-center"><?php
                                         switch($row['estado_ticket']){
                                             case "Pendiente":
@@ -131,7 +134,6 @@
                                         }
                                         ?></td>
                                     <td class="text-center"><?php echo $row['nombre_usuario']; ?></td>
-                                    <td class="text-center"><?php echo $row['mensaje']; ?></td>
                                     <td class="text-center"><?php echo $row['email_cliente']; ?></td>
                                     <td class="text-center"><?php echo $row['departamento']; ?></td>
                                     <td class="text-center" style="width: 10%">
