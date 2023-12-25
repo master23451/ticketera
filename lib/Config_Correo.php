@@ -21,7 +21,7 @@ class Config_Correo extends PHPMailer
         $this->Password=AUTH_PASSWORD;
     }
 
-    public function crear_correo($email_solicitante, $email_tecnico, $id_ticket, $asunto_ticket, $detalle_ticket, $estatus_ticket)
+    public function crear_correo($email_solicitante, $tecnico_asiganmdo, $id_ticket, $asunto_ticket, $detalle_ticket, $estatus_ticket)
     {
         $mensaje  = "<html lang='es'><body>";
         $mensaje .= "<table width='100%' bgcolor='#e0e0e0' cellpadding='0' cellspacing='0' border='0'>";
@@ -36,7 +36,7 @@ class Config_Correo extends PHPMailer
        <p style='font-size:13px; color: #ec971f'><strong>Estatus:</strong> ".$estatus_ticket. "</p>
        </center>
        <p style='font-size:17px;'><strong>Detalle del problema: </strong><br/> ".$detalle_ticket."</p>
-       <p style='font-size:15px;'><strong>Tecnico asigando: </strong> ".$email_tecnico."</p>
+       <p style='font-size:15px;'><strong>Tecnico asigando: </strong> ".$tecnico_asiganmdo."</p>
        <hr/>
        <center><p style='font-size:12px; font-family:Verdana, Geneva, sans-serif;'>¡Gracias por reportarnos su problema! Buscaremos una solución para su producto lo mas pronto posible.</p></center>
        </td>
@@ -49,7 +49,7 @@ class Config_Correo extends PHPMailer
         try {
             $this->setFrom(AUTH_USERNAME);
             $this->addAddress($email_solicitante);
-            $this->addAddress($email_tecnico);
+            //$this->addAddress($email_tecnico);
             $this->Subject = "ID ".$id_ticket." - ".$asunto_ticket;
             $this->Body = $mensaje;
             $this->isHTML();

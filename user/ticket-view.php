@@ -131,16 +131,16 @@ if (isset($_SESSION['nombre']) && isset($_SESSION['tipo'])) {
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-sm-2 control-label">Tecnico</label>
+                                            <label for="select_tecnico" class="col-sm-2 control-label">Tecnico</label>
                                             <div class="col-sm-10">
                                                 <div class='input-group'>
                                                     <select class="form-control" name="departamento_ticket" id="select_tecnico">
-                                                        <option value="0" readonly="">Seleccionar...</option>
+                                                        <option value="0" disabled>Seleccionar...</option>
                                                         <?php
                                                             $consulta = Mysql::consulta("SELECT * FROM administrador ");
                                                         foreach ($consulta as $key):
                                                             ?>
-                                                            <option value="<?php echo $key["email_admin"] ?>"><?php echo $key["nombre_admin"] ?></option>
+                                                            <option value="<?php echo $key["nombre_admin"] ?>"><?php echo $key["nombre_admin"] ?></option>
                                                         <?php
                                                         endforeach;
                                                         ?>
