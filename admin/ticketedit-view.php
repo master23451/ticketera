@@ -28,7 +28,7 @@
             ';
             //mail($email_edit, $asunto_edit, $mensaje_mail, $cabecera);
             $actualizar_correo = new Config_Correo();
-            $actualizar_correo->responder_correo($reg['email_cliente'], $reg['serie'], $reg['asunto'], $reg['mensaje'],  $estado_edit, $solucion_edit, $correo_admin);
+            $actualizar_correo->responder_correo($reg['email_cliente'], $reg['serie'], $reg['asunto'], $reg['mensaje'],  $estado_edit, $solucion_edit, $correo_admin, $reg['departamento']);
 
         }else{
             echo '
@@ -145,9 +145,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label  class="col-sm-2 control-label">Solución</label>
+                    <label  class="col-sm-2 control-label" for="solucion_ticket">Solución</label>
                     <div class="col-sm-10">
-                        <textarea class="form-control" rows="3"  name="solucion_ticket" required=""><?php echo $reg['solucion']?></textarea>
+                        <textarea class="form-control" rows="3"  name="solucion_ticket" id="solucion_ticket" required=""><?php echo $reg['solucion']?></textarea>
                     </div>
                 </div>
                 <br>

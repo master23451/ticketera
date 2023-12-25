@@ -63,7 +63,7 @@ class Config_Correo extends PHPMailer
         }
     }
 
-    public function responder_correo($email_solicitante, $id_ticket, $asunto_ticket, $detalle_ticket, $estatus_ticket, $ticket_solucion,  $correo_tecnico)
+    public function responder_correo($email_solicitante, $id_ticket, $asunto_ticket, $detalle_ticket, $estatus_ticket, $ticket_solucion,  $correo_tecnico, $tecnico_asignado)
     {
         $estatus = "";
         $color = "";
@@ -96,7 +96,7 @@ class Config_Correo extends PHPMailer
        </center>
        <p style='font-size:17px;'><strong>Detalle del problema: </strong><br/> ".$detalle_ticket."</p>
        <p style='font-size:15px;'><strong>Solucion del pronlema: </strong><br/> ".$ticket_solucion."</p>
-       <p style='font-size:15px;'><strong>Tecnico que soluciono el problema: </strong> ".$correo_tecnico."</p>
+       <p style='font-size:15px;'><strong>Tecnico que soluciono el problema: </strong> ".$tecnico_asignado."</p>
        <hr/>
        <center><p style='font-size:12px; font-family:Verdana, Geneva, sans-serif;'>¡Gracias por reportarnos su problema! Buscaremos una solución para su producto lo mas pronto posible.</p></center>
        </td>
