@@ -44,8 +44,9 @@ if(mysqli_num_rows($consulta_tablaTicket)>=1){
         </div><!--fin row well-->
         <div class="row">
             <div class="col">
-                <a href="./index.php?view=ticketregits" class="btn btn-warning" style="margin-right: 50%"><i class="fa fa-reply"></i>&nbsp;&nbsp;Volver a la lista de ticket</a>
+                <a href="./index.php?view=ticketregits" class="btn btn-danger btn-sm fa-pull-right"><i class="fa fa-reply"></i>&nbsp;&nbsp;Volver a la lista de ticket</a>
             </div>
+            <br/>
             <br/>
             <div class="col">
                 <div class="panel panel-success">

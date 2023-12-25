@@ -32,6 +32,8 @@
 
     <a href="./index.php?view=soporte" class="btn btn-danger btn-sm fa-pull-right"><span
                 class="fa fa-reply"></span>&nbsp;&nbsp;Volver a soporte</a>
+    <br/>
+    <br/>
     <div class="container">
         <div class="row">
             <div class="col-md-12">

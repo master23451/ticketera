@@ -43,8 +43,7 @@ if (isset($_POST['correo_login']) && isset($_POST['contrasena_login'])) {
             <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <span class="glyphicon glyphicon-user"></span> &nbsp; <?php echo $_SESSION['nombre']; ?><b
-                                    class="caret"></b>
+                            <span class="glyphicon glyphicon-user"></span> &nbsp; <?php echo $_SESSION['nombre']; ?><b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- usuarios -->
@@ -90,9 +89,7 @@ if (isset($_POST['correo_login']) && isset($_POST['contrasena_login'])) {
                                     class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Login</a>
                     </li>
                 <?php endif; ?>
-
             </ul>
-
         </div>
     </div>
 </nav>
@@ -102,7 +99,7 @@ if (isset($_POST['correo_login']) && isset($_POST['contrasena_login'])) {
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title text-center" style="color: black" id="myModalLabel">Bienvenido a Soporte Tecnico UTJ</h4>
+                <h4 class="modal-title text-center text-success" id="myModalLabel"><strong>Bienvenido a Soporte Tecnico UTJ</strong></h4>
             </div>
             <form action="" method="POST" style="margin: 20px;">
                 <div class="form-group">
@@ -130,8 +127,10 @@ if (isset($_POST['correo_login']) && isset($_POST['contrasena_login'])) {
                     </label>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success btn-sm">Iniciar sesión</button>
-                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cancelar</button>
+                    <center>
+                        <button type="submit" class="btn btn-success btn-sm">Iniciar sesión</button>
+                        <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cancelar</button>
+                    </center>
                 </div>
             </form>
         </div>
